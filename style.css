@@ -3,3 +3,16 @@ html {
   height: 100%;
   background: linear-gradient(to bottom left, #6495ed, #f08080);
 }
+body {
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 350px;
+  height: 550px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 30px grey;
+}
