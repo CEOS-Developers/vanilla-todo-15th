@@ -1,13 +1,17 @@
 html {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom left, #6495ed, #f08080);
+  background: linear-gradient(to bottom left, #22c1c3, #fdbb2d);
 }
 body {
   height: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.list-title {
+  font-size: 20px;
 }
 .container {
   width: 350px;
