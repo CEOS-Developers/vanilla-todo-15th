@@ -10,7 +10,7 @@ body {
 
 main {
     width: 350px;
-    height: 80vh;
+    height: 650px;
     min-height: 500px;
     background-color: #fff;
     border-radius: 15px;
@@ -20,6 +20,9 @@ main {
 }
 section {
     padding: 0 16px;
+}
+h4 {
+    margin: 20px 0px;
 }
 section:not(:last-of-type) {
     border-bottom: 1px solid #d3d3d3;
@@ -57,8 +60,7 @@ section:not(:last-of-type) {
     background-color: #d3d3d3;
     transition: all 0.3s ease;
 }
-
-.todo-item {
+.item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,6 +77,20 @@ section:not(:last-of-type) {
 }
 ul {
     padding-inline-start: 30px;
+    height: 175px;
+    overflow-y: auto;
+    margin-top: 0px;
+}
+ul::-webkit-scrollbar {
+    width: 5px;
+}
+ul::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3; /*스크롤바의 색상*/
+    border-radius: 2.5px;
+}
+
+ul::-webkit-scrollbar-track {
+    background-color: none; /*스크롤바 트랙 색상*/
 }
 .item-content {
     line-height: 24px;
@@ -87,7 +103,7 @@ ul {
     color: #d3d3d3;
     font-size: 22px;
     position: absolute;
-    top: 1px;
+    top: 5px;
     left: -30px;
 }
 .done {
@@ -99,6 +115,6 @@ ul {
     font-size: 22px;
     color: #8989bb;
     position: absolute;
-    top: 1px;
+    top: 5px;
     left: -30px;
 }
