@@ -8,7 +8,24 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="top-contents">
+        <h2 class="todo-title">투두리스트</h2>
+        <div class="todo-input-items">
+          <input class="todo-input" placeholder="할 일을 입력하세요" />
+          <input
+            class="todo-input-button"
+            type="button"
+            value="+"
+            onclick="addTodoItem()"
+          />
+        </div>
+      </div>
+      <div class="center-contents">
+        <h3>TO DO</h3>
+        <ul class="todo-list"></ul>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>

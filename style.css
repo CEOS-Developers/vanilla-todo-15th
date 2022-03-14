@@ -16,3 +16,39 @@ body {
   border-radius: 20px;
   box-shadow: 1px 1px 30px grey;
 }
+.todo-title {
+  margin-left: 20px;
+}
+.todo-input-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-input {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 15px;
+  width: 230px;
+}
+.todo-input:focus {
+  outline: none;
+}
+.todo-input-button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.top-contents {
+  padding-bottom: 15px;
+  border-bottom: 1px solid lightgrey;
+}
+.center-contents {
+  padding-left: 20px;
+}
+.todo-list {
+  height: 150px;
+  overflow: scroll auto;
+  overflow-x: hidden;
+}
