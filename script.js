@@ -4,12 +4,12 @@ let doneList = [];
 // 입력된 값을 todo list에 추가
 const addTodoItem = () => {
   const todoContent = document.querySelector(".todo-input").value;
-  paintTodoItem(todoContent);
+  if (todoContent) paintTodoItem(todoContent);
 };
 
 // 화면에 todo item을 추가
 const paintTodoItem = (text) => {
-  const todoId = todoList.length + 1;
+  const todoId = new Date().valueOf();
   const newTodo = document.createElement("li");
   const newTodoText = document.createElement("span");
   const todoDel = document.createElement("img");
@@ -84,7 +84,7 @@ const toggleTodoToDone = (e) => {
 
 // 화면에 todo done item을 추가
 const paintDoneItem = (text) => {
-  const todoId = doneList.length + 1;
+  const todoId = new Date().valueOf();
   const newTodoDone = document.createElement("li");
   const newTodoText = document.createElement("span");
   const todoDel = document.createElement("img");
@@ -180,6 +180,7 @@ const loadLocalStorage = () => {
       // list에 존재하는 item들 화면에 그리기
       paintTodoItem(item.text);
     });
+    countTodoItem();
   }
   if (doneStorage) {
     const loadDone = JSON.parse(doneStorage);
@@ -187,6 +188,7 @@ const loadLocalStorage = () => {
       // list에 존재하는 item들 화면에 그리기
       paintDoneItem(item.text);
     });
+    countDoneItem();
   }
 };
 
