@@ -180,7 +180,6 @@ const loadLocalStorage = () => {
       // list에 존재하는 item들 화면에 그리기
       paintTodoItem(item.text);
     });
-    countTodoItem();
   }
   if (doneStorage) {
     const loadDone = JSON.parse(doneStorage);
@@ -188,8 +187,9 @@ const loadLocalStorage = () => {
       // list에 존재하는 item들 화면에 그리기
       paintDoneItem(item.text);
     });
-    countDoneItem();
   }
+  countTodoItem();
+  countDoneItem();
 };
 
 loadLocalStorage();
