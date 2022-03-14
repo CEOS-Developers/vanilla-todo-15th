@@ -8,7 +8,23 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>할 일 목록</h1>
+      <section class="typeToDo">
+        <input id="input" type="text" placeholder="여기 입력해 주세요" />
+        <button type="submit" id="submit">+</button>
+      </section>
+
+      <section class="savedToDo">
+        <p>해야할 일</p>
+        <ul id="toDos"></ul>
+      </section>
+
+      <section class="doneToDo">
+        <p>끝낸 일</p>
+        <ul id="toDo"></ul>
+      </section>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
