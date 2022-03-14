@@ -18,7 +18,7 @@ const paintTodoItem = (text) => {
   newTodoText.innerText = text;
   newTodoText.style.cursor = "pointer";
   newTodoText.style.fontSize = "15px";
-  newTodoText.addEventListener("dblclick", addDoneItem);
+  newTodoText.addEventListener("dblclick", toggleTodoToDone);
 
   // todo item 삭제 버튼 추가
   todoDel.setAttribute("src", "img/bin.png");
@@ -61,17 +61,16 @@ const deleteTodoItem = (e) => {
   saveTodoLocalStorage();
 };
 
-const addDoneItem = (e) => {
+// todo item -> done item
+const toggleTodoToDone = (e) => {
   // todo List에서 item 삭제
   deleteTodoItem(e);
 
   // done list에 item 추가
   paintDoneItem(e.target.innerText);
-
-  // localStorage에 갱신된 doneList 저장
-  saveDoneLocalStorage();
 };
 
+// 화면에 todo done item을 추가
 const paintDoneItem = (text) => {
   const todoId = doneList.length + 1;
   const newTodoDone = document.createElement("li");
@@ -84,12 +83,14 @@ const paintDoneItem = (text) => {
   newTodoText.style.fontSize = "15px";
   newTodoText.style.textDecorationLine = "line-through";
   newTodoText.style.color = "lightGrey";
+  newTodoText.addEventListener("dblclick", toggleDoneToTodo);
 
   // todo done item 삭제 버튼 추가
   todoDel.setAttribute("src", "img/bin.png");
   todoDel.style.width = "14px";
   todoDel.style.paddingLeft = "5px";
   todoDel.style.cursor = "pointer";
+  todoDel.addEventListener("click", deleteDoneItem);
 
   // li에 item 추가
   newTodoDone.setAttribute("id", todoId);
@@ -104,6 +105,33 @@ const paintDoneItem = (text) => {
 
   doneList.push(todoObj);
   document.querySelector(".done-list").appendChild(newTodoDone);
+
+  // localStorage에 갱신된 doneList 저장
+  saveDoneLocalStorage();
+};
+
+// done item -> todo item
+const toggleDoneToTodo = (e) => {
+  // done List에서 item 삭제
+  deleteDoneItem(e);
+
+  // todo list에 item 추가
+  paintTodoItem(e.target.innerText);
+};
+
+// todo done item을 삭제
+const deleteDoneItem = (e) => {
+  const target = e.target.parentNode;
+  document.querySelector(".done-list").removeChild(target);
+
+  // target node 삭제
+  const newTodoList = doneList.filter(
+    (item) => item.id !== parseInt(target.id),
+  );
+  doneList = newTodoList;
+
+  // localStorage에 갱신된 doneList 저장
+  saveDoneLocalStorage();
 };
 
 // todo list를 localStorage에 저장
@@ -111,6 +139,7 @@ const saveTodoLocalStorage = () => {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 };
 
+// todo done list를 localStorage에 저장
 const saveDoneLocalStorage = () => {
   localStorage.setItem("doneList", JSON.stringify(doneList));
 };
