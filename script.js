@@ -42,6 +42,9 @@ const paintTodoItem = (text) => {
   document.querySelector(".todo-list").appendChild(newTodo);
   document.querySelector(".todo-input").value = "";
 
+  // todo item 개수 갱신
+  countTodoItem();
+
   // localStorage에 갱신된 todoList 저장
   saveTodoLocalStorage();
 };
@@ -57,8 +60,17 @@ const deleteTodoItem = (e) => {
   );
   todoList = newTodoList;
 
+  // todo item 개수 갱신
+  countTodoItem();
+
   // localStorage에 갱신된 todoList 저장
   saveTodoLocalStorage();
+};
+
+// todo item 개수 출력
+const countTodoItem = () => {
+  const count = document.querySelector(".todo-count");
+  count.innerText = "(" + todoList.length + ")";
 };
 
 // todo item -> done item
@@ -106,6 +118,9 @@ const paintDoneItem = (text) => {
   doneList.push(todoObj);
   document.querySelector(".done-list").appendChild(newTodoDone);
 
+  // done item 개수 갱신
+  countDoneItem();
+
   // localStorage에 갱신된 doneList 저장
   saveDoneLocalStorage();
 };
@@ -130,8 +145,17 @@ const deleteDoneItem = (e) => {
   );
   doneList = newTodoList;
 
+  // done item 개수 갱신
+  countDoneItem();
+
   // localStorage에 갱신된 doneList 저장
   saveDoneLocalStorage();
+};
+
+// todo item 개수 출력
+const countDoneItem = () => {
+  const count = document.querySelector(".done-count");
+  count.innerText = "(" + doneList.length + ")";
 };
 
 // todo list를 localStorage에 저장
