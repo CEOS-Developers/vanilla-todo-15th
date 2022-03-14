@@ -47,10 +47,20 @@ body {
 }
 .center-contents,
 .bottom-contents {
-  padding-left: 20px;
+  padding: 0 20px;
 }
-.todo-list {
-  height: 120px;
+.todo-list,
+.done-list {
+  height: 150px;
   overflow: scroll auto;
   overflow-x: hidden;
+}
+.todo-list::-webkit-scrollbar,
+.done-list::-webkit-scrollbar {
+  width: 5px;
+}
+.todo-list::-webkit-scrollbar-thumb,
+.done-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
 }

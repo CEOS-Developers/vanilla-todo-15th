@@ -29,7 +29,7 @@ const paintTodoItem = (text) => {
 
   // li에 item 추가
   newTodo.setAttribute("id", todoId);
-  newTodo.style.marginBottom = "10px";
+  newTodo.style.marginBottom = "13px";
   newTodo.appendChild(newTodoText);
   newTodo.appendChild(todoDel);
 
@@ -94,7 +94,7 @@ const paintDoneItem = (text) => {
 
   // li에 item 추가
   newTodoDone.setAttribute("id", todoId);
-  newTodoDone.style.marginBottom = "10px";
+  newTodoDone.style.marginBottom = "13px";
   newTodoDone.appendChild(newTodoText);
   newTodoDone.appendChild(todoDel);
 
