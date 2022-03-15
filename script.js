@@ -75,14 +75,14 @@ const createTodoElement = (content, isItToDo) => {
             doneArr = doneArr.filter((v) => v !== content);
             todoArr.push(content);
         }
-        item.remove();
+        syncLocalStorage();
+
         while (todoList.firstChild) {
             todoList.removeChild(todoList.lastChild);
         }
         while (doneList.firstChild) {
             doneList.removeChild(doneList.lastChild);
         }
-        syncLocalStorage();
         getLocalStorage();
     }
     itemContent.onclick = toggleTodo;

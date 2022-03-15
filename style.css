@@ -89,19 +89,19 @@ ul::-webkit-scrollbar-track {
 }
 
 .item-remove {
-    width: 18px;
-    height: 18px;
-    margin: 9px;
+    width: 16px;
+    height: 16px;
+    margin: 10px;
     background-image: url(./img/bin.png);
     background-size: cover;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .item-content {
     line-height: 24px;
-    cursor: default;
-    width: 242px;
+    cursor: pointer;
 }
 .todo {
     position: relative;
@@ -113,7 +113,6 @@ ul::-webkit-scrollbar-track {
     position: absolute;
     top: 5px;
     left: -30px;
-    cursor: pointer;
 }
 .done {
     color: #c0c0c0;
