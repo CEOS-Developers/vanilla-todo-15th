@@ -3,16 +3,20 @@ const form = document.querySelector('#input-form');
 const input = document.querySelector('#input-form input');
 const yetList = document.querySelector('#yet-list');
 const doneList = document.querySelector('#done-list');
+const todoNum = document.querySelector('#todoNum');
+const doneNum = document.querySelector('#doneNum');
 
 // 텍스트는 변수로 설정 => 오타 방지 및 수정 용이
 const yetText = 'yetList';
 const doneText = 'doneList';
+const yetBtnText = 'yetBtn';
+
 // for localStorage
 let yetArr = [];
 let doneArr = [];
+let id = 0;
 
 // 사용한 함수들에 대한 기능명세는 다음과 같음.
-
 // 함수1, setValue in localStorage
 const setYetLocal = (arr) => {
   localStorage.setItem(yetText, JSON.stringify(arr));
@@ -27,19 +31,25 @@ const setYet = (obj) => {
   // DOM 조작(생성)
   const li = document.createElement('li');
   const span = document.createElement('span');
-  const btn = document.createElement('button');
-  const btn2 = document.createElement('button');
-  span.innerText = obj.contents;
-  btn.innerText = 'del';
-  btn2.innerText = 'Done';
+  const delImg = document.createElement('img');
+  const yetBtn = document.createElement('button');
+  // span.innerText = obj.contents;
+  delImg.src = './img/bin.png';
+  yetBtn.className = yetBtnText;
+  yetBtn.innerText = obj.contents;
   li.id = obj.id;
-  li.append(btn2);
+  li.append(yetBtn);
   li.append(span);
-  li.append(btn);
+  li.append(delImg);
   yetList.append(li); // dom 삽입
   // del , done 처리
-  btn.addEventListener('click', del);
-  btn2.addEventListener('click', done);
+
+  // 숫자 업데이트
+
+  delImg.addEventListener('click', del);
+  yetBtn.addEventListener('click', done);
+
+  updateNum();
 };
 
 // 함수4, render in doneList
@@ -50,6 +60,7 @@ const setDone = (obj) => {
   li.id = obj.id;
   li.append(span);
   doneList.append(li);
+  updateNum();
 };
 
 // 함수 5, delete data both render and localStorage
@@ -62,8 +73,8 @@ const del = (e) => {
   let temp = JSON.parse(localStorage.getItem(yetText));
   temp = temp.filter((i) => i.id != id);
   localStorage.setItem(yetText, JSON.stringify(temp));
+  updateNum();
 };
-
 // 함수 6, delete data both render and localStorage
 const done = (e) => {
   const id = e.target.parentElement.id;
@@ -86,9 +97,19 @@ const done = (e) => {
   };
   doneArr.push(obj);
   setDoneLocal(doneArr);
-
   // 3. render (함수4)
   setDone2();
+
+  // 4. update num
+  updateNum();
+};
+
+const getTodoNum = () => {
+  return JSON.parse(localStorage.getItem(yetText))?.length;
+};
+
+const getDoneNum = () => {
+  return JSON.parse(localStorage.getItem(doneText))?.length;
 };
 
 const setDone2 = () => {
@@ -101,6 +122,13 @@ const setDone2 = () => {
     li.append(span);
   });
   doneList.append(li);
+};
+
+const updateNum = () => {
+  const a = getTodoNum();
+  const b = getDoneNum();
+  todoNum.innerText = `To Do (${a == undefined ? 0 : a})`;
+  doneNum.innerText = `DONE (${b == undefined ? 0 : b})`;
 };
 
 // form submit
@@ -117,6 +145,9 @@ form.addEventListener('submit', (e) => {
   setYet(obj);
   //함수1 사용 setValue in localStorage
   setYetLocal(yetArr);
+
+  // 숫자 업데이트
+  updateNum();
 });
 
 // 새로고침했을 때 localStorage 에서 값 가져옴.
@@ -125,6 +156,7 @@ if (localStorage.getItem(yetText)) {
   yetArr = temp;
   // 함수3 사용 for rendering
   temp.forEach((i) => setYet(i));
+  updateNum();
 }
 
 if (localStorage.getItem(doneText)) {
@@ -132,4 +164,5 @@ if (localStorage.getItem(doneText)) {
   DoneArr = temp;
   // 함수4 사용 for rendering
   temp.forEach((i) => setDone(i));
+  updateNum();
 }

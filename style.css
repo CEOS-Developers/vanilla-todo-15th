@@ -1,34 +1,69 @@
-/* reset */
 
-ul{
-    list-style:none;
-}
 input:focus {outline:none;}
-
-/* design layout and UI */
-
+* {
+    box-sizing: border-box;
+    font-family: 'SpoqaHanSansNeo-Regular';
+}
+html, body {
+    margin: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient( circle at 50% 0, rgba(255, 38, 38, 0.5), rgba(255, 0, 0, 0) 70.71% ), radial-gradient( circle at 6.7% 75%, rgba(30, 30, 255, 0.5), rgba(0, 0, 255, 0) 70.71% ), radial-gradient( circle at 93.3% 75%, rgba(63, 255, 63, 0.287), rgba(0, 255, 0, 0) 70.71% ) beige;
+}
+img{
+    width: 15px;
+    height: 15px;
+}
 .container{
+    width: 360px;
+    height: 600px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    margin: auto;
-    width: 40vh;
+    border-radius: 20px;
+    background: white;
 }
-.to-do{
-    display: flex;
-    border: 1px solid gold;
+#to-do{
+    margin: 5% 5% 0 5%;
+    font-size: 24px;
+    font-weight: 500;
 }
-.yet{
-    display: flex;
-    border: 3px solid red;
-}
-.yet .a{
+
+#yet{
     border: 1px solid red;
 }
-.yet .b{
+#formDiv{
+    /*display: flex;*/
+    justify-content: center;
     border: 1px solid red;
 }
-.done-list{
+#input-form{
     display: flex;
-    border: 1px solid yellow;
+    align-items: center;
+    justify-content: center;
 }
+#input-box{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px lightgrey;
+}
+#plus{
+    width: 10%;
+    background-color: white;
+    border : none
+}
+
+
+/* js 로 추가하는 항목들 */
+.yetBtn{
+    border : none;
+    background : none
+}
+
+
