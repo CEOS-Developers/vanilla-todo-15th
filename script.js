@@ -12,37 +12,6 @@ const doneText = 'doneList'
 let yetArr = []
 let doneArr = []
 
-// form submit
-form.addEventListener('submit', (e)=>{
-  e.preventDefault()
-  const val = input.value
-  input.value = ''
-  const obj = {
-    contents : val,
-    id : Date.now()
-  }
-  yetArr.push(obj)
-  //함수3 사용 render in yetList
-  setYet(obj)
-  //함수1 사용 setValue in localStorage
-  setYetLocal(yetArr)
-})
-
-if(localStorage.getItem(yetText)){
-  const temp = JSON.parse(localStorage.getItem(yetText))
-  yetArr = temp
-  // 함수3 사용 for rendering
-  temp.forEach(i=> setYet(i))
-}
-
-if(localStorage.getItem(doneText)){
-  const temp = JSON.parse(localStorage.getItem(doneText))
-  DoneArr = temp
-  // 함수4 사용 for rendering
-  temp.forEach(i=> setDone(i))
-}
-
-
 // 사용한 함수들에 대한 기능명세는 다음과 같음.
 
 // 함수1, setValue in localStorage
@@ -76,15 +45,20 @@ const setYet = (obj)=>{
 }
 
 // 함수4, render in doneList
-const setDone =()=>{
+const setDone =(obj)=>{
   const li = document.createElement('li')
   const span = document.createElement('span')
-  const temp = JSON.parse(localStorage.getItem(doneText))
-  temp.map((i)=>{
-    span.innerText = i.contents
-    li.id = i.id
-    li.append(span)
-  })
+  // console.log(temp)
+  // temp.map((i)=>{
+  //   span.innerText = i.contents
+  //   li.id = i.id
+  //   li.append(span)
+  //   doneList.append(li)
+  //   console.dir(doneList.innerText)
+  // })
+  span.innerText = obj.contents
+  li.id = obj.id
+  li.append(span)
   doneList.append(li)
 }
 
@@ -114,7 +88,7 @@ const done = (e)=>{
   const yet  = temp.filter((i)=> i.id != id)
   const done = temp.filter(i=>i.id == id)
   localStorage.setItem(yetText, JSON.stringify(yet))
-
+  // console.log(JSON.stringify(done))
   // 2.2. add done in localStorage
 
   const obj ={
@@ -125,5 +99,55 @@ const done = (e)=>{
   setDoneLocal(doneArr)
 
   // 3. render (함수4)
-  setDone()
+  setDone2()
 }
+
+const setDone2 =()=>{
+  const li = document.createElement('li')
+  const span = document.createElement('span')
+  const temp = JSON.parse(localStorage.getItem(doneText))
+  temp.map((i)=>{
+    span.innerText = i.contents
+    li.id = i.id
+    li.append(span)
+  })
+  doneList.append(li)
+
+}
+
+
+
+// form submit
+form.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  const val = input.value
+  input.value = ''
+  const obj = {
+    contents : val,
+    id : Date.now()
+  }
+  yetArr.push(obj)
+  //함수3 사용 render in yetList
+  setYet(obj)
+  //함수1 사용 setValue in localStorage
+  setYetLocal(yetArr)
+})
+
+
+// 새로고침했을 때 localStorage 에서 값 가져옴.
+if(localStorage.getItem(yetText)){
+  const temp = JSON.parse(localStorage.getItem(yetText))
+  yetArr = temp
+  // 함수3 사용 for rendering
+  temp.forEach(i=> setYet(i))
+}
+
+if(localStorage.getItem(doneText)){
+  const temp = JSON.parse(localStorage.getItem(doneText))
+  DoneArr = temp
+  // 함수4 사용 for rendering
+  temp.forEach(i=> setDone(i))
+}
+
+
+

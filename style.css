@@ -1,0 +1,26 @@
+/* reset */
+
+ul{
+    list-style:none;
+}
+input:focus {outline:none;}
+
+/* design layout and UI */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: auto;
+    width: 40vh;
+}
+.to-do{
+    display: flex;
+}
+.yet{
+    display: flex;
+    /*flex-direction: column;*/
+}
+.done{
+    display: flex;
+}
