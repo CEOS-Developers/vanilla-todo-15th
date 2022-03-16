@@ -12,3 +12,21 @@ const doneText = 'doneList'
 let yetArr = []
 let doneArr = []
 
+// form submit
+form.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  const val = input.value
+  input.value = ''
+  const obj = {
+    contents : val,
+    id : Date.now()
+  }
+  yetArr.push(obj)
+  //함수3 사용 render in yetList
+  setYet(obj)
+  //함수1 사용 setValue in localStorage
+  setYetLocal(yetArr)
+})
+
+
+
