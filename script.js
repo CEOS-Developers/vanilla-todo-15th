@@ -74,3 +74,17 @@ const setYet = (obj)=>{
   btn.addEventListener('click', del)
   btn2.addEventListener('click', done)
 }
+
+// 함수4, render in doneList
+const setDone =()=>{
+  const li = document.createElement('li')
+  const span = document.createElement('span')
+  const temp = JSON.parse(localStorage.getItem(doneText))
+  temp.map((i)=>{
+    span.innerText = i.contents
+    li.id = i.id
+    li.append(span)
+  })
+  doneList.append(li)
+}
+
