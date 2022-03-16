@@ -43,3 +43,14 @@ if(localStorage.getItem(doneText)){
 }
 
 
+// 사용한 함수들에 대한 기능명세는 다음과 같음.
+
+// 함수1, setValue in localStorage
+const setYetLocal =(arr)=>{
+  localStorage.setItem(yetText, JSON.stringify(arr))
+}
+// 함수2, setValue in localStorage
+const setDoneLocal = (arr)=>{
+  localStorage.setItem(doneText, JSON.stringify(arr))
+}
+
