@@ -88,3 +88,15 @@ const setDone =()=>{
   doneList.append(li)
 }
 
+// 함수 5, delete data both render and localStorage
+const del = (e)=>{
+  // 1. delete rendering data in yet
+  e.target.parentElement.remove()
+
+  // 2. delete localStorage data in yet
+  const id = e.target.parentElement.id
+  let temp = JSON.parse(localStorage.getItem(yetText))
+  temp = temp.filter((i)=> i.id != id)
+  localStorage.setItem(yetText, JSON.stringify(temp))
+}
+
