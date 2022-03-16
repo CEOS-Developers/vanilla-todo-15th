@@ -28,5 +28,18 @@ form.addEventListener('submit', (e)=>{
   setYetLocal(yetArr)
 })
 
+if(localStorage.getItem(yetText)){
+  const temp = JSON.parse(localStorage.getItem(yetText))
+  yetArr = temp
+  // 함수3 사용 for rendering
+  temp.forEach(i=> setYet(i))
+}
+
+if(localStorage.getItem(doneText)){
+  const temp = JSON.parse(localStorage.getItem(doneText))
+  DoneArr = temp
+  // 함수4 사용 for rendering
+  temp.forEach(i=> setDone(i))
+}
 
 
