@@ -16,11 +16,19 @@ input:focus {outline:none;}
 }
 .to-do{
     display: flex;
+    border: 1px solid gold;
 }
 .yet{
     display: flex;
-    /*flex-direction: column;*/
+    border: 3px solid red;
 }
-.done{
+.yet .a{
+    border: 1px solid red;
+}
+.yet .b{
+    border: 1px solid red;
+}
+.done-list{
     display: flex;
+    border: 1px solid yellow;
 }
