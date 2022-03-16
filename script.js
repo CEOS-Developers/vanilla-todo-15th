@@ -1,9 +1,9 @@
-const list = document.getElementById('savedToDo');
+const savedList = document.getElementById('savedList');
 
 form.addEventListener('submit', (e) => {
   const li = document.createElement('li');
   li.innerText = document.getElementById('input').value;
-  list.appendChild(li);
+  savedList.appendChild(li);
   li.id = 'li';
 
   const deleteButton = document.createElement('button');
@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) => {
   li.appendChild(deleteButton);
 
   deleteButton.addEventListener('click', function () {
-    list.removeChild(li);
+    savedList.removeChild(li);
   });
 
   e.preventDefault();
