@@ -100,3 +100,30 @@ const del = (e)=>{
   localStorage.setItem(yetText, JSON.stringify(temp))
 }
 
+// 함수 6, delete data both render and localStorage
+const done = (e)=>{
+  const id = e.target.parentElement.id
+  const text = e.target.parentElement.innerText.slice(4,-1)
+  // 1. delete render
+  e.target.parentElement.remove()
+
+  // 2.localStorage
+  // 2.1. delete yet in localStorage
+
+  const temp = JSON.parse(localStorage.getItem(yetText))
+  const yet  = temp.filter((i)=> i.id != id)
+  const done = temp.filter(i=>i.id == id)
+  localStorage.setItem(yetText, JSON.stringify(yet))
+
+  // 2.2. add done in localStorage
+
+  const obj ={
+    contents : done[0].contents,
+    id : done[0].id
+  }
+  doneArr.push(obj)
+  setDoneLocal(doneArr)
+
+  // 3. render (함수4)
+  setDone()
+}
