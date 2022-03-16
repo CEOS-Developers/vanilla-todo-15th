@@ -54,3 +54,23 @@ const setDoneLocal = (arr)=>{
   localStorage.setItem(doneText, JSON.stringify(arr))
 }
 
+
+// 함수3, render in yetList
+const setYet = (obj)=>{
+  // DOM 조작(생성)
+  const li = document.createElement('li')
+  const span = document.createElement('span')
+  const btn = document.createElement('button')
+  const btn2 = document.createElement('button')
+  span.innerText = obj.contents
+  btn.innerText = 'del'
+  btn2.innerText = 'Done'
+  li.id = obj.id
+  li.append(btn2)
+  li.append(span)
+  li.append(btn)
+  yetList.append(li) // dom 삽입
+  // del , done 처리
+  btn.addEventListener('click', del)
+  btn2.addEventListener('click', done)
+}
