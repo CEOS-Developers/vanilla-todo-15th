@@ -43,7 +43,8 @@ const colors = [
         const deletetoDoList = event.target.parentElement;
         deletetoDoList.remove();
       
-        
+        finish();
+
         }
 
         function moveToDo(event) {
@@ -103,6 +104,8 @@ const colors = [
         
         toDoItem.addEventListener("click", moveToDo);
         deleteButton.addEventListener("click", deleteToDo);
+
+        finish();
     
       }
 
