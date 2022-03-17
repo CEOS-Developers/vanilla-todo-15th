@@ -3,12 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>할 일 목록 프로그램</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c9ad708a77.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="container"></div>
+    <main>
+    <div class="container">
+      <div class="todoInput">
+        <div class="todoTitle">
+          <h3>인터네트 할 일 목록 프로그램</h3>
+        </div>
+        <form class="formControl">
+          <input class="formInput" type="text" id="todoItem" placeholder="과업을 입력하시오">
+          <button type="submit" class="submitBtn"><p>+</p></button>
+        </form>
+      </div>
+      <section class="todoSection">
+        <h4>해야할 과업 (<p class="todoCount"></p>)</h4>
+        <div class="todoList">
+        </div>
+      </section>
+      <section class="doneSection">
+        <h4>마무리한 과업 (<p class="doneCount"></p>)</h4>
+        <div class="doneList">
+        </div>
+      </section>
+      <p class="footer">21세기 혁명의 정신을 완수하자!</p>
+    </div>
+  </main>
   </body>
   <script src="script.js"></script>
 </html>
