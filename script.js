@@ -62,22 +62,22 @@ const createTodoElement = (content, isItToDo) => {
     countTodo();
 
     //삭제 버튼 함수
-    function removeTodo() {
+    const removeTodo = () => {
         if (isItToDo === 'todo') {
             todoArr = todoArr.filter((v) => v !== content);
         }
         if (isItToDo === 'done') {
             doneArr = doneArr.filter((v) => v !== content);
         }
-        const parentNode = this.parentElement;
-        parentNode.remove();
+        item.remove();
         syncLocalStorage();
         countTodo();
-    }
+        toast('삭제되었어요!');
+    };
     itemRemove.onclick = removeTodo;
 
     //할일 토글 함수
-    function toggleTodo() {
+    const toggleTodo = () => {
         if (isItToDo === 'todo') {
             todoArr = todoArr.filter((v) => v !== content);
             doneArr.push(content);
@@ -98,7 +98,7 @@ const createTodoElement = (content, isItToDo) => {
             doneList.removeChild(doneList.lastChild);
         }
         getLocalStorage();
-    }
+    };
     itemContent.onclick = toggleTodo;
     radioButton.onclick = toggleTodo;
 };
@@ -120,15 +120,37 @@ const pushTodo = () => {
             window.localStorage.setItem('todo', JSON.stringify(todoArr));
             createTodoElement(input.value, 'todo');
         }
+    } else {
+        toast('동일한 내용으론 작성할 수 없어요!');
     }
     input.value = null;
 };
 
+//투두 개수 카운팅
 const countTodo = () => {
     const todo = document.getElementById('todo-count');
     const done = document.getElementById('done-count');
     todo.innerHTML = '(' + todoArr.length + ')';
     done.innerHTML = '(' + doneArr.length + ')';
+};
+
+//토스트 알림
+const toast = (string) => {
+    const toast = document.getElementById('toast');
+
+    if (toast.classList.contains('reveal')) {
+        clearTimeout(removeToast);
+        removeToast = setTimeout(function () {
+            document.getElementById('toast').classList.remove('reveal');
+        }, 1000);
+    } else {
+        removeToast = setTimeout(function () {
+            document.getElementById('toast').classList.remove('reveal');
+        }, 1000);
+    }
+
+    toast.classList.add('reveal');
+    toast.innerText = string;
 };
 
 window.onload = getLocalStorage();
