@@ -102,6 +102,7 @@ ul::-webkit-scrollbar-track {
     border-radius: 50%;
     border: 2px solid #8989bb;
     cursor: pointer;
+    transform: translateY(-1px);
 }
 /* 완료된 할일엔 동그라미 채우기 */
 .done > .item-content-box > .radio-button {
