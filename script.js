@@ -15,3 +15,37 @@ const colors = [
     
     document.body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
    
+    const toDoButton = document.getElementById("toDoButton");
+    const toDo = document.getElementById("toDo");
+
+    function toDoInput(){
+        const newTodo = toDo.value;
+        toDo.value = "";
+        makeToDo(newTodo);
+    
+      }
+    
+      function makeToDo(newTodo) {
+        toDoNum++;
+        toDoInfo.innerText = `(${toDoNum})`;
+        
+        const li = document.createElement("div");
+        const toDoItem = document.createElement("span");
+        const deleteButton = document.createElement("span");
+        
+        li.style.margin= "10px"; 
+        
+        toDoItem.innerText = newTodo;
+        deleteButton.innerText = "❌";
+        
+        li.appendChild(toDoItem); 
+        li.appendChild(deleteButton);
+        toDoList.appendChild(li);
+        
+        toDoItem.addEventListener("click", moveToDo);
+        deleteButton.addEventListener("click", deleteToDo);
+    
+      }
+
+      toDoButton.addEventListener("click", toDoInput);
+ 
