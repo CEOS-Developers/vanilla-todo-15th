@@ -51,11 +51,20 @@ const colors = [
             doneNum++;
             doneInfo.innerText =`(${doneNum})`;
         
+            deleteButton.addEventListener("click", trashDoneToDo);
         
           }
 
+          function trashDoneToDo(event) {
+            const li = event.target.parentElement;
+            li.remove(); 
+            
+            doneNum--;
+            doneInfo.innerText =`(${doneNum})`;
+        
+          }
 
-    function toDoInput(){
+     function toDoInput(){
         const newTodo = toDo.value;
         toDo.value = "";
         makeToDo(newTodo);
