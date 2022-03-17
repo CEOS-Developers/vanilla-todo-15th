@@ -29,10 +29,7 @@ form.addEventListener('submit', (e) => {
   });
 
   deleteButton.addEventListener('click', function (event) {
-    const targetToDo = event.currentTarget.parentNode;
-    console.log(targetToDo.parentNode);
-    targetToDo.parentNode.remove(targetToDo);
-    targetToDo.remove();
+    setTimeout(() => li.remove(), 0);
   });
 
   e.preventDefault();
