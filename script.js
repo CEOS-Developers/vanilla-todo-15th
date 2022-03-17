@@ -33,3 +33,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // LocalStorage에서 Item을 불러오고, 비어있는 경우 예외
 });
+
+// ===== 등록 이벤트핸들러, Item 수 추적 ===== //
+
+form.addEventListener("submit", addTodo);
+
+function updateCnt() {
+  todoCountField.textContent = todoList.children.length;
+  doneCountField.textContent = doneList.children.length;
+}
