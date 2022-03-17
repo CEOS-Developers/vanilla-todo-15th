@@ -21,11 +21,28 @@ form.addEventListener('submit', (e) => {
     let doneNum = doneList.getElementsByTagName('li').length;
   };
 
+  li.draggable = true;
   li.addEventListener('click', () => {
     li.isDone ? (li.isDone = false) : (li.isDone = true);
     li.isDone ? doneList.append(li) : savedList.append(li);
     countSavedNum();
     countDoneNum();
+  });
+
+  li.addEventListener('dragstart', function (event) {
+    /*event.dataTransfer.setData('Text', event.target.id);*/
+  });
+
+  li.addEventListener('drag', function (event) {});
+
+  li.addEventListener('dragover', function (event) {
+    event.preventDefault();
+  });
+
+  li.addEventListener('drop', function (event) {
+    event.preventDefault();
+    console.log(event.target);
+    event.target.parentNode.append(li);
   });
 
   deleteButton.addEventListener('click', function (event) {
