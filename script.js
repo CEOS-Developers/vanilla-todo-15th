@@ -17,6 +17,18 @@ const colors = [
    
     const toDoButton = document.getElementById("toDoButton");
     const toDo = document.getElementById("toDo");
+    const toDoList = document.getElementById("todo-list");
+
+    function deleteToDo(event) {
+        toDoNum--;
+        toDoInfo.innerText =`(${toDoNum})`;
+        
+        const deletetoDoList = event.target.parentElement;
+        deletetoDoList.remove();
+      
+        
+        }
+
 
     function toDoInput(){
         const newTodo = toDo.value;
