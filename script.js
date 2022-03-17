@@ -18,6 +18,10 @@ const colors = [
     const toDoButton = document.getElementById("toDoButton");
     const toDo = document.getElementById("toDo");
     const toDoList = document.getElementById("todo-list");
+    const toDoInfo = document.getElementById("toDoInfo");
+    const doneList = document.getElementById("done-list");
+    const doneInfo = document.getElementById("doneInfo");
+    
 
     function deleteToDo(event) {
         toDoNum--;
@@ -28,6 +32,27 @@ const colors = [
       
         
         }
+
+        function moveToDo(event) {
+            deleteToDo(event);
+            
+            const removeList = document.createElement("div");
+            const removeItem = event.target;
+            const deleteButton = document.createElement("span");
+            deleteButton.innerText = "❌";
+           
+            removeList.style.color ="grey";
+            
+            removeList.appendChild(removeItem); 
+            removeList.appendChild(deleteButton);
+            doneList.appendChild(removeList);
+        
+        
+            doneNum++;
+            doneInfo.innerText =`(${doneNum})`;
+        
+        
+          }
 
 
     function toDoInput(){
