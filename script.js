@@ -18,6 +18,7 @@ const paintTodoItem = (text) => {
   newTodoText.innerText = text;
   newTodoText.style.cursor = "pointer";
   newTodoText.style.fontSize = "15px";
+  newTodoText.style.paddingLeft = "5px";
   newTodoText.addEventListener("dblclick", toggleTodoToDone);
 
   // todo item 삭제 버튼 추가
@@ -95,6 +96,7 @@ const paintDoneItem = (text) => {
   newTodoText.style.fontSize = "15px";
   newTodoText.style.textDecorationLine = "line-through";
   newTodoText.style.color = "lightGrey";
+  newTodoText.style.paddingLeft = "5px";
   newTodoText.addEventListener("dblclick", toggleDoneToTodo);
 
   // todo done item 삭제 버튼 추가
