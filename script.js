@@ -59,6 +59,7 @@ const createTodoElement = (content, isItToDo) => {
     } else {
         doneList.appendChild(item);
     }
+    countTodo();
 
     //삭제 버튼 함수
     function removeTodo() {
@@ -71,6 +72,7 @@ const createTodoElement = (content, isItToDo) => {
         const parentNode = this.parentElement;
         parentNode.remove();
         syncLocalStorage();
+        countTodo();
     }
     itemRemove.onclick = removeTodo;
 
@@ -119,6 +121,13 @@ const pushTodo = () => {
     }
 
     input.value = null;
+};
+
+const countTodo = () => {
+    const todo = document.getElementById('todo-count');
+    const done = document.getElementById('done-count');
+    todo.innerHTML = '(' + todoArr.length + ')';
+    done.innerHTML = '(' + doneArr.length + ')';
 };
 
 window.onload = getLocalStorage();

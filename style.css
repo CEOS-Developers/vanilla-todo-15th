@@ -147,3 +147,8 @@ ul::-webkit-scrollbar-track {
     left: -30px;
     cursor: pointer;
 } */
+
+#todo-count,
+#done-count {
+    color: #8989bb;
+}
