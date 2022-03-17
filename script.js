@@ -6,9 +6,7 @@ const colors = [
     "#ffdd59"
   
     ];
-  
-  
-    
+
   
     let firstColor = colors[Math.floor(Math.random() * colors.length)];
     let secondColor = colors[Math.floor(Math.random() * colors.length)];
@@ -25,7 +23,7 @@ const colors = [
     
     var toDoNum = 0;
     var doneNum = 0;
-    
+
     function finish(){
         if(toDoNum === 0){
           finishtoDo.classList.remove("hidden");
