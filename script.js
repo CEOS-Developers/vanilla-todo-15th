@@ -21,7 +21,20 @@ const colors = [
     const toDoInfo = document.getElementById("toDoInfo");
     const doneList = document.getElementById("done-list");
     const doneInfo = document.getElementById("doneInfo");
+    const finishtoDo = document.getElementById("finishtoDo");
     
+    function finish(){
+        if(toDoNum === 0){
+          finishtoDo.classList.remove("hidden");
+    
+        }
+    
+        else{
+          finishtoDo.classList.add("hidden");
+        }
+    
+       
+      }
 
     function deleteToDo(event) {
         toDoNum--;
