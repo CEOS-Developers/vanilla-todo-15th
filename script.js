@@ -42,3 +42,53 @@ function updateCnt() {
   todoCountField.textContent = todoList.children.length;
   doneCountField.textContent = doneList.children.length;
 }
+
+// ====== Todo, Done List 조작 관련 함수들 ======= //
+
+function addTodo(e) {
+  e.preventDefault();
+  const value = formInput.value;
+  const id = new Date().getTime().toString();
+
+  if (value !== "") {
+    createTodoItem(id, value);
+    addToLocalStorage(id, { text: value, type: "todo" });
+  }
+
+  formInput.value = "";
+  updateCnt();
+
+  // Form에서 넘어온 값이 공백인 경우 넘기기
+  // Unique ID를 생성하기 위해 등록시점의 시간을 사용 (millisecond 단위)
+}
+
+function moveToDone(e) {
+  const todoItem = e.currentTarget.parentElement;
+  const id = todoItem.getAttribute("id");
+  const itemText = todoItem.textContent.slice(0, -3);
+
+  todoList.removeChild(todoItem);
+  editLocalStorage(id, { text: itemText, type: "done" });
+
+  createDoneItem(id, itemText);
+  updateCnt();
+
+  // button 기준 parentELement = doneItem
+  // Unique ID를 기준으로 localStorage 수정
+}
+function moveToTodo(e) {
+  const doneItem = e.currentTarget.parentElement;
+  const id = doneItem.getAttribute("id");
+  const itemText = doneItem.textContent.slice(0, -3);
+
+  //textContent로 불러올 시 "  \n"이 더해지는 현상이 있어 slice로 처리
+
+  doneList.removeChild(doneItem);
+  editLocalStorage(id, { text: itemText, type: "todo" });
+
+  createTodoItem(id, itemText);
+  updateCnt();
+
+  // button 기준 parentELement = todoItem
+  // Unique ID를 기준으로 localStorage 수정
+}
