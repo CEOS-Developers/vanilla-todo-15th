@@ -63,9 +63,11 @@ section:not(:last-of-type) {
     transition: all 0.3s ease;
 }
 
-/*리스트*/
+/*
+리스트
+*/
 ul {
-    padding-inline-start: 30px;
+    padding-inline-start: 0px;
     height: 175px;
     overflow-y: auto;
     margin-top: 0px;
@@ -81,11 +83,29 @@ ul::-webkit-scrollbar-track {
     background-color: none; /*스크롤바 트랙 색상*/
 }
 
-/*아이템*/
+/*
+아이템
+*/
 .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.item-content-box {
+    display: flex;
+}
+.radio-button {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #8989bb;
+    cursor: pointer;
+}
+/* 완료된 할일엔 동그라미 채우기 */
+.done > .item-content-box > .radio-button {
+    background-color: #8989bb;
 }
 
 .item-remove {
@@ -100,25 +120,25 @@ ul::-webkit-scrollbar-track {
 }
 
 .item-content {
-    line-height: 24px;
     cursor: pointer;
+    line-height: 22px;
 }
 .todo {
     position: relative;
 }
-.todo:before {
+/* .todo:before {
     content: '○';
     color: #d3d3d3;
     font-size: 22px;
     position: absolute;
     top: 5px;
     left: -30px;
-}
+} */
 .done {
     color: #c0c0c0;
     position: relative;
 }
-.done:before {
+/* .done:before {
     content: '●';
     font-size: 22px;
     color: #8989bb;
@@ -126,4 +146,4 @@ ul::-webkit-scrollbar-track {
     top: 5px;
     left: -30px;
     cursor: pointer;
-}
+} */

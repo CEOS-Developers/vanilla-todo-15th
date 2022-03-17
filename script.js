@@ -39,10 +39,19 @@ const createTodoElement = (content, isItToDo) => {
     itemContent.className = 'item-content';
     itemContent.innerHTML = content;
 
+    const radioButton = document.createElement('div');
+    radioButton.className = 'radio-button';
+
     const itemRemove = document.createElement('button');
     itemRemove.className = 'item-remove';
 
-    item.appendChild(itemContent);
+    const itemContentBox = document.createElement('div');
+    itemContentBox.className = 'item-content-box';
+
+    itemContentBox.appendChild(radioButton);
+    itemContentBox.appendChild(itemContent);
+
+    item.appendChild(itemContentBox);
     item.appendChild(itemRemove);
 
     if (isItToDo === 'todo') {
@@ -75,8 +84,11 @@ const createTodoElement = (content, isItToDo) => {
             doneArr = doneArr.filter((v) => v !== content);
             todoArr.push(content);
         }
+
+        //현재 배열을 로컬스토리지에 최신화합니다.
         syncLocalStorage();
 
+        // 화면에 보이는 요소들을 모두 지우고, 다시 로컬스토리지에서 불러옵니다.
         while (todoList.firstChild) {
             todoList.removeChild(todoList.lastChild);
         }
@@ -86,6 +98,7 @@ const createTodoElement = (content, isItToDo) => {
         getLocalStorage();
     }
     itemContent.onclick = toggleTodo;
+    radioButton.onclick = toggleTodo;
 };
 
 //엔터키로 추가 가능
