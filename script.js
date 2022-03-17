@@ -113,13 +113,14 @@ const enterPush = () => {
 //새 할일 추가하기 함수
 const pushTodo = () => {
     const input = document.getElementById('input-form');
-
-    if (input.value.length > 0) {
-        todoArr.push(input.value);
-        window.localStorage.setItem('todo', JSON.stringify(todoArr));
-        createTodoElement(input.value, 'todo');
+    if (todoArr.indexOf(input.value) == -1 && doneArr.indexOf(input.value) == -1) {
+        //해당하는 값이 없을때만 추가!! : 이름이 같으면 토글할때 문제가 생기던데
+        if (input.value.length > 0) {
+            todoArr.push(input.value);
+            window.localStorage.setItem('todo', JSON.stringify(todoArr));
+            createTodoElement(input.value, 'todo');
+        }
     }
-
     input.value = null;
 };
 
