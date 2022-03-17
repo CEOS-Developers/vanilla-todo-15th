@@ -23,20 +23,51 @@ form.addEventListener('submit', (e) => {
     isDone: false,
   };
   todoItems.push(obj);
-
   render(obj);
+  setLocal(todoItems);
 });
 
 const render = (obj) => {
-  if (obj.isDone == false) {
-    // 위쪽에 랜더
+  // rendering in todoList
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  const delBtn = document.createElement('button');
+  btn.innerText = obj.contents;
+  delBtn.innerText = 'X';
+  li.id = obj.id;
+  li.status = obj.isDone;
+  li.append(btn);
+  li.append(delBtn);
+  yetList.append(li);
+
+  // add eventListener
+  delBtn.addEventListener('click', (e) => {
+    const target = e.target.parentElement;
+    const id = target.id;
+    target.remove();
+
+    const temp = JSON.parse(localStorage.getItem(todoItemsText));
+    const stillTodo = temp.filter((i) => i.id != id); // 눌러지지 않은 것들
+    localStorage.setItem(todoItemsText, JSON.stringify(stillTodo));
+  });
+  btn.addEventListener('click', (e) => {
+    e.target.parentElement.remove();
+    const target = e.target.parentElement;
+    const id = target.id;
+    target.status = true;
+
     const li = document.createElement('li');
     const btn = document.createElement('button');
-    btn.innerText = obj.contents;
-    li.id = obj.id;
+    btn.innerText = target.innerText.slice(0, -1);
     li.append(btn);
-    yetList.append(li);
-  } else if (obj.isDone == true) {
-    // 아래쪽에 랜더
-  }
+    doneList.append(li);
+
+    btn.addEventListener('click', (e) => {
+      const target = e.target.parentElement;
+    });
+  });
+};
+
+const setLocal = (arr) => {
+  localStorage.setItem(todoItemsText, JSON.stringify(arr));
 };
