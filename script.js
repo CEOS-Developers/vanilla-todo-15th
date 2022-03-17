@@ -155,3 +155,47 @@ function createDoneItem(id, itemText) {
 
   //각각 moveTodone(todoList로 이동), deleteTodoItem(doneList에서 삭제) 함수 연결
 }
+
+// ====== Storage 조작 관련 함수들 ======= //
+// 과거 수강했었던 강의의 코드를 참조했습니다
+// https://www.youtube.com/c/CodingAddict/videos
+//list | {id, {value: value, type: type}} 구조
+
+function getLocalStorage() {
+  return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+}
+
+function addToLocalStorage(id, value) {
+  console.log(value);
+  const item = { id, value };
+  let items = getLocalStorage();
+  items.push(item);
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function removeFromLocalStorage(id) {
+  let items = getLocalStorage();
+
+  items = items.filter(function (item) {
+    if (item.id !== id) {
+      return item;
+    }
+  });
+
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function editLocalStorage(id, value) {
+  console.log(id);
+  let items = getLocalStorage();
+
+  items = items.map((item) => {
+    if (item.id === id) {
+      item.value = value;
+    }
+    return item;
+  });
+  localStorage.setItem("list", JSON.stringify(items));
+}
