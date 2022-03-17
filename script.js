@@ -92,3 +92,66 @@ function moveToTodo(e) {
   // button 기준 parentELement = todoItem
   // Unique ID를 기준으로 localStorage 수정
 }
+
+// ====== Item 조작 관련 함수들 ======= //
+
+function deleteTodoItem(e) {
+  const todoItem = e.currentTarget.parentElement;
+  const id = todoItem.getAttribute("id");
+  todoList.removeChild(todoItem);
+  removeFromLocalStorage(id);
+  updateCnt();
+
+  // button 기준 parentELement = doneItem
+}
+
+function deleteDoneItem(e) {
+  const doneItem = e.currentTarget.parentElement;
+  const id = doneItem.getAttribute("id");
+  doneList.removeChild(doneItem);
+  removeFromLocalStorage(id);
+  updateCnt();
+
+  // button 기준 parentELement = todoItem
+}
+
+function createTodoItem(id, itemText) {
+  const todoItem = document.createElement("div");
+  let attribute = document.createAttribute("id");
+  attribute.value = id;
+  todoItem.setAttributeNode(attribute);
+  todoItem.classList.add("item");
+
+  // 새로운 div element 생성 후 인자로 전달된 unique id를 attribute으로 설정
+  // 'item' 클래스는 각 아이템의 css 스타일 프리셋
+
+  todoItem.innerHTML = `<button class="itemFinish" type="button"><p class="itemTitle">${itemText}</p></button>
+  <button class="itemDelete" type="button"><p><i class="fa fa-solid fa-trash"></i></p></button>`;
+
+  const moveBtn = todoItem.querySelector(".itemFinish");
+  moveBtn.addEventListener("click", moveToDone);
+  const deleteBtn = todoItem.querySelector(".itemDelete");
+  deleteBtn.addEventListener("click", deleteTodoItem);
+  todoList.appendChild(todoItem);
+
+  //각각 moveTodone(doneList로 이동), deleteTodoItem(todoList에서 삭제) 함수 연결
+}
+
+function createDoneItem(id, itemText) {
+  const doneItem = document.createElement("div");
+  let attribute = document.createAttribute("id");
+  attribute.value = id;
+  doneItem.setAttributeNode(attribute);
+  doneItem.classList.add("item");
+
+  doneItem.innerHTML = `<button class="itemFinish" type="button"><p class="itemTitle"><del>${itemText}</del></p></button>
+  <button class="itemDelete" type="button"><p><i class="fa fa-solid fa-trash"></i></p></button>`;
+
+  const moveBtn = doneItem.querySelector(".itemFinish");
+  moveBtn.addEventListener("click", moveToTodo);
+  const deleteBtn = doneItem.querySelector(".itemDelete");
+  deleteBtn.addEventListener("click", deleteDoneItem);
+  doneList.appendChild(doneItem);
+
+  //각각 moveTodone(todoList로 이동), deleteTodoItem(doneList에서 삭제) 함수 연결
+}
