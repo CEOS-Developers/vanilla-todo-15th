@@ -23,6 +23,9 @@ const colors = [
     const doneInfo = document.getElementById("doneInfo");
     const finishtoDo = document.getElementById("finishtoDo");
     
+    var toDoNum = 0;
+    var doneNum = 0;
+    
     function finish(){
         if(toDoNum === 0){
           finishtoDo.classList.remove("hidden");
