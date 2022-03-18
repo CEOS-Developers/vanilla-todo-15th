@@ -64,7 +64,6 @@ const render = () => {
     delBtn.setAttribute('class', 'delete-btn');
     delBtn.setAttribute('data-bin', idx);
     delBtn.addEventListener('click', delTodo);
-    // listElement.append(delBtn);
     listElement.appendChild(delBtn);
     item.isDone ? doneList.append(listElement) : todoList.append(listElement);
   });
