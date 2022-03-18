@@ -3,7 +3,6 @@
 }
 
 body {
-  margin: 0px;
   background-image: linear-gradient(
     to right top,
     #75adff,
@@ -15,13 +14,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
+  width: 99%;
 }
 
 main {
   width: 27rem;
   height: 50rem;
-  min-height: 50rem;
   background-color: #fff;
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 2rem;
