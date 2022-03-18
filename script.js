@@ -1,7 +1,22 @@
 const savedList = document.getElementById('savedList');
 const doneList = document.getElementById('doneList');
+let savedListTitle = document.getElementById('savedListTitle');
+savedListTitle.innerHTML = '해야할 일';
+doneListTitle.innerHTML = '완료한 일';
 
 form.addEventListener('submit', (e) => {
+  const countSavedNum = () => {
+    let savedNum = savedList.getElementsByTagName('li').length;
+    savedListTitle.innerHTML = `해야할 일(${savedNum + 1})`;
+  };
+  countSavedNum();
+
+  const countDoneNum = () => {
+    let doneNum = doneList.getElementsByTagName('li').length;
+    doneListTitle.innerHTML = `완료한 일(${doneNum})`;
+  };
+  countDoneNum();
+
   const li = document.createElement('li');
   li.innerText = document.getElementById('input').value;
   li.id = li.innerText;
@@ -13,14 +28,6 @@ form.addEventListener('submit', (e) => {
   deleteButton.id = 'deleteButton';
   li.append(deleteButton);
 
-  const countSavedNum = () => {
-    let savedNum = savedList.getElementsByTagName('li').length;
-  };
-
-  const countDoneNum = () => {
-    let doneNum = doneList.getElementsByTagName('li').length;
-  };
-
   li.draggable = true;
   li.addEventListener('click', () => {
     li.isDone ? (li.isDone = false) : (li.isDone = true);
@@ -29,9 +36,7 @@ form.addEventListener('submit', (e) => {
     countDoneNum();
   });
 
-  li.addEventListener('dragstart', function (event) {
-    /*event.dataTransfer.setData('Text', event.target.id);*/
-  });
+  li.addEventListener('dragstart', function (event) {});
 
   li.addEventListener('drag', function (event) {});
 
