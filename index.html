@@ -1,14 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<html lang="kor">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>✨ 오늘 할 일</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="status-bar">
+                <span>19:59</span>
+                <span>LTE</span>
+            </div>
+            <div class="todo-container">
+                <div class="todo-title">
+                    <div>
+                        <img src="img/ionicon_back.png" />
+                        <span>CEOS</span>
+                    </div>
+                    <div>
+                        <img src="img/ios_more.png" />
+                    </div>
+                </div>
+                <div class="todo-timestamp">
+                    <span>March 18, 2022 19:04</span>
+                    <div>
+                        <span>✨ 오늘 할 일</span>
+                    </div>
+                </div>
+                <div class="todo-content">
+                    <div class="todo-list">
+                        <span>
+                            ❎ 계획
+                        </span>
+                        <ul class="todo-list-pre">
+                            <li class="todo-list-items"><a>투두리스트 레이아웃 구성하기</a></li>
+                            <li class="todo-list-items"><a>폰트 스타일 설정하기</a></li>
+                            <li class="todo-list-items"><a>이모지 추가</a></li>
+                            <li class="todo-list-items"><a>localStorage 갖다 쓰기</a></li>
+                        </ul>
+                        <span>
+                            ✅ 완료
+                        </span>
+                        <ul class="todo-list-done">
+                            <li class="todo-list-items"><a>저녁 먹기</a></li>
+                            <li class="todo-list-items"><a>딴짓하기</a></li>
+                            <li class="todo-list-items"><a>늦게 시작하기</a></li>
+                        </ul>
+                    </div>
+                    <div class="todo-input">
+                        <form class="todo-form">
+                            <input type="text" placeholder="🔥" />
+                        </form>
+                        <div onclick="alert('test')">
+                            <img src="img/ios_compose.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/mockup.png" />
+        </div>
+        <div class="footer">
+            <span>
+                💖 <strong>CEOS 15 </strong>FRONTEND 💖
+            </span>
+            <br />
+            <a href="https://github.com/poodlepoodle" target="_blank">
+                ✨ github.com/<strong>poodlepoodle</strong> ✨
+            </a>
+        </div>
 
-  <body>
-    <div class="container"></div>
-  </body>
-  <script src="script.js"></script>
+
+        <!-- <div class="container">
+            <div class="content">
+                <div class="listInput">
+                    <input type="text" placeholder="what are you going to do today?" />
+                </div>
+                <div class="toDo">
+                    <ul class="toDoList">
+                        <li>sample todo 1</li>
+                        <li>sample todo 2</li>
+                        <li>sample todo 3</li>
+                        <li>sample todo 4</li>
+                        <li>sample todo 5</li>
+                    </ul>
+                </div>
+                <div class="done">
+                    <ul class="doneList">
+                        <li>sample done 1</li>
+                        <li>sample done 2</li>
+                        <li>sample done 3</li>
+                        <li>sample done 4</li>
+                        <li>sample done 5</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <form class="toDoForm">
+              <input type="text" placeholder="what are you going to do today?" />
+            </form>
+            <ul class="toDos"></ul>
+        </div> -->
+    </body>
+    <script src="script.js"></script>
 </html>
