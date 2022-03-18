@@ -1,315 +1,255 @@
-body
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    margin: 0px;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0px;
 }
 
-.container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
-    height: 100vh;
-    /* background-color: #EAE4E188; */
-    /* background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    
-    /* display: flex; */
-    /* margin: 10px;
-    padding: 15px;
-    border-radius: 5px; */
-
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
 }
 
-.container > img
-{
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+.container > img {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
 
-    width: auto;
-    height: 700px;
+  width: auto;
+  height: 700px;
 }
 
-.status-bar
-{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 300px;
-    height : 30px;
-    background: white;
+.status-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 300px;
+  height: 30px;
+  background: #f9f9f9;
 }
 
-.status-bar > span
-{
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-bottom: 7px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 900;
-    color: #333333;
+.status-bar > span {
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-bottom: 7px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  color: #333333;
 }
 
-.status-bar > span:nth-child(2)
-{
-    font-size: 11px;
+.status-bar > span:nth-child(2) {
+  font-size: 11px;
 }
 
-.todo-container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 
-    width: 300px;
-    height: 620px;
+  width: 300px;
+  height: 620px;
 
-    color: black;
-    text-align: center;
-    border-radius: 30px;
-    background: white;
+  color: black;
+  text-align: center;
+  border-radius: 30px;
+  background: white;
 }
 
-.todo-title
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 30px;
-    align-items: center;
-    background: white;
+.todo-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  background: #f9f9f9;
 }
 
-.todo-title > div
-{
-    padding-left: 10px;
-    padding-right: 10px;
+.todo-title > div {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.todo-title > div > img
-{
-    width: 18px;
-    height: 18px;
+.todo-title > div > img {
+  width: 18px;
+  height: 18px;
 }
 
-.todo-title > div > span
-{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #EAB000;
+.todo-title > div > span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #eab000;
 }
 
-.todo-timestamp
-{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 50px;
-    justify-content: left;
-    margin: 0px;
-    padding: 0px;
+.todo-timestamp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  justify-content: left;
+  margin: 0px;
+  padding: 0px;
 }
 
-.todo-timestamp > span
-{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    color: #999999;
+.todo-timestamp > span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  padding-bottom: 5px;
+  color: #999999;
+  background: #f9f9f9;
 }
 
-.todo-timestamp > div
-{
-    display: flex;
-    justify-content: left;
-    padding: 5px 0px 5px 15px;
+.todo-timestamp > div {
+  display: flex;
+  justify-content: left;
+  padding: 5px 0px 5px 15px;
 }
 
-.todo-timestamp > div > span
-{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: #222222;
+.todo-timestamp > div > span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #222222;
 }
 
-.todo-content
-{
-    flex: 9;
+.todo-content {
+  flex: 9;
 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    z-index: 1000 !important;
+  z-index: 1000 !important;
 }
 
-.todo-list
-{
-    flex : 8;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.todo-list {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    margin: 10px 10px 0px 10px;
+  margin: 10px 10px 0px 10px;
 }
 
-.todo-list > span
-{
-    margin-left: 10px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #444444;
+.todo-list > span {
+  margin-left: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444444;
 }
 
-.todo-list-pre
-{
-    list-style: none;
-    text-align: left;
-    /* background: red; */
+.todo-list-pre {
+  list-style: none;
+  text-align: left;
+  /* background: red; */
 }
 
-.todo-list-done
-{
-    list-style: none;
-    text-align: left;
-    /* background: blue; */
+.todo-list-done {
+  list-style: none;
+  text-align: left;
+  /* background: blue; */
 }
 
-ul
-{
-    padding-left: 10px;
+ul {
+  padding-left: 10px;
 }
 
-ul > li
-{
-    padding: 2px 0px 2px 2px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    border-bottom: 1px solid #efefef;
-    /* display: inline-block; */
+ul > li {
+  padding: 2px 0px 2px 2px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  border-bottom: 1px solid #efefef;
+  /* display: inline-block; */
 
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #333333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
 }
 
-/* .todo-list
-{
-    flex : 8;
-    margin-top: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 100%;
-    list-style-type: none;
-    padding: 0px;
-    background: blue;
+li > img {
+  width: 13px;
+  margin-left: 10px;
 }
 
-.todo-list-items > a
-{
-    display: block;
-    padding: 9px 10px 5px 10px;
-    border-bottom: 1px solid #E7E7E7;
-
-    box-sizing: border-box; 
-    text-decoration: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-} */
-
-.todo-input
-{
-    flex : 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 15px;
-    margin-bottom : 10px;
-    /* padding-left: 10px; */
-    width: 100%;
+.todo-input {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-.todo-input > form
-{
-    flex : 4;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+.todo-input > form {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
 
-.todo-input > form > input
-{
-    flex : 1;
-    text-align: left;
-    border-color: transparent;
-    box-shadow : 1px 1px 2px 1px #FFA50033;
-    border-radius: 15px;
+.todo-input > form > input {
+  flex: 1;
+  text-align: left;
+  border-color: transparent;
+  box-shadow: 1px 1px 2px 1px #ffa50033;
+  border-radius: 15px;
 
-    height: 30px;
-    padding : 0 0 0 15px;
-    
-    color: #333333;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
+  height: 30px;
+  padding: 0 0 0 15px;
+
+  color: #333333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.todo-input > form > input:focus
-{
-    outline: none;
+.todo-input > form > input:focus {
+  outline: none;
 }
 
-.todo-input > div
-{
-    flex : 1;
-    height : 30px;
-    margin-right: 10px;
-    object-fit: contain;
+.todo-input > div {
+  flex: 1;
+  height: 30px;
+  margin-right: 10px;
+  object-fit: contain;
 }
 
-.todo-input > div > img
-{
-    object-fit: cover;
+.todo-input > div > img {
+  object-fit: cover;
 }
 
-.footer
-{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    text-align: right;
+.footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
 
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
 }
 
-.footer > a
-{
-    color: white;
-    text-decoration: none;
+.footer > a {
+  color: white;
+  text-decoration: none;
 }
