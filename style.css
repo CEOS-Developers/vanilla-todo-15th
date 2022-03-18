@@ -163,12 +163,12 @@ body {
 }
 
 .todo-list-done {
-    list-style: none;
-    text-align: left;
-    
-    max-height: 300px;
-    overflow: auto;
-    text-decoration: line-through;
+  list-style: none;
+  text-align: left;
+
+  max-height: 300px;
+  overflow: auto;
+  text-decoration: line-through;
 }
 
 ul {
@@ -176,8 +176,8 @@ ul {
 }
 
 ul > li {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
   padding: 2px 0px 2px 2px;
   margin-bottom: 5px;
@@ -214,23 +214,23 @@ li > img {
 }
 
 .todo-input > form > input {
-    flex: 1;
-    text-align: left;
-    border-color: transparent;
-    box-shadow: 1px 1px 2px 1px #ffa50033;
+  flex: 1;
+  text-align: left;
+  border-color: transparent;
+  box-shadow: 1px 1px 2px 1px #ffa50033;
   border-radius: 15px;
-  
+
   height: 30px;
   padding: 0 0 0 15px;
-  
+
   color: #333333;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
-  .todo-input > form > input::-webkit-input-placeholder {
-    opacity: 0.5; /*Change the opacity between 0 and 1*/
-  }
+.todo-input > form > input::-webkit-input-placeholder {
+  opacity: 0.5; /*Change the opacity between 0 and 1*/
+}
 
 .todo-input > form > input:focus {
   outline: none;
