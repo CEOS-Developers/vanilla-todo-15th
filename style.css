@@ -109,7 +109,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   color: #999999;
   background: #f9f9f9;
 }
@@ -123,7 +123,7 @@ body {
 .todo-timestamp > div > span {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   color: #222222;
 }
 
@@ -143,7 +143,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
 
-  margin: 10px 10px 0px 10px;
+  margin: 20px 10px 0px 10px;
 }
 
 .todo-list > span {
@@ -157,13 +157,18 @@ body {
 .todo-list-pre {
   list-style: none;
   text-align: left;
-  /* background: red; */
+
+  max-height: 300px;
+  overflow: auto;
 }
 
 .todo-list-done {
-  list-style: none;
-  text-align: left;
-  /* background: blue; */
+    list-style: none;
+    text-align: left;
+    
+    max-height: 300px;
+    overflow: auto;
+    text-decoration: line-through;
 }
 
 ul {
@@ -171,11 +176,13 @@ ul {
 }
 
 ul > li {
+    display: flex;
+    justify-content: space-between;
+
   padding: 2px 0px 2px 2px;
   margin-bottom: 5px;
   margin-left: 10px;
   border-bottom: 1px solid #efefef;
-  /* display: inline-block; */
 
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -207,20 +214,23 @@ li > img {
 }
 
 .todo-input > form > input {
-  flex: 1;
-  text-align: left;
-  border-color: transparent;
-  box-shadow: 1px 1px 2px 1px #ffa50033;
+    flex: 1;
+    text-align: left;
+    border-color: transparent;
+    box-shadow: 1px 1px 2px 1px #ffa50033;
   border-radius: 15px;
-
+  
   height: 30px;
   padding: 0 0 0 15px;
-
+  
   color: #333333;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
+  .todo-input > form > input::-webkit-input-placeholder {
+    opacity: 0.5; /*Change the opacity between 0 and 1*/
+  }
 
 .todo-input > form > input:focus {
   outline: none;
@@ -228,7 +238,7 @@ li > img {
 
 .todo-input > div {
   flex: 1;
-  height: 30px;
+  height: 24px;
   margin-right: 10px;
   object-fit: contain;
 }

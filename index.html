@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="status-bar">
-        <span>19:59</span>
+        <span id="time">19:59</span>
         <span>LTE</span>
       </div>
       <div class="todo-container">
@@ -24,30 +24,23 @@
           </div>
         </div>
         <div class="todo-timestamp">
-          <span>March 18, 2022 19:04</span>
+          <span id="date">March 18, 2022 19:04</span>
           <div>
             <span>✨ 오늘 할 일</span>
           </div>
         </div>
         <div class="todo-content">
           <div class="todo-list">
-            <span> ❎ 계획 </span>
+              <span> ❎ 계획 (<span id="pre">0</span>) </span>
             <ul class="todo-list-pre">
-              <!-- <li class="todo-list-items"><a>투두리스트 레이아웃 구성하기</a></li>
-                            <li class="todo-list-items"><a>폰트 스타일 설정하기</a></li>
-                            <li class="todo-list-items"><a>이모지 추가</a></li>
-                            <li class="todo-list-items"><a>localStorage 갖다 쓰기</a></li> -->
             </ul>
-            <span> ✅ 완료 </span>
+            <span> ✅ 완료 (<span id="done">0</span>) </span>
             <ul class="todo-list-done">
-              <!-- <li class="todo-list-items"><a>저녁 먹기</a></li>
-                            <li class="todo-list-items"><a>딴짓하기</a></li>
-                            <li class="todo-list-items"><a>늦게 시작하기</a></li> -->
             </ul>
           </div>
           <div class="todo-input">
             <form class="todo-form">
-              <input type="text" placeholder="🔥" />
+              <input type="text" placeholder="🔥 일정을 입력해 주세요" />
             </form>
             <div>
               <img src="img/ios_compose.png" />
