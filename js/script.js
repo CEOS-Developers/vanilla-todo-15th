@@ -25,10 +25,13 @@ const addNewTodo = (event) => {
 addTodoBtn.addEventListener('click', addNewTodo);
 
 const delTodo = (event) => {
-  const idxToDel = items.findIndex(
+  const keyToDel = items.findIndex(
     (item) => item.key === parseInt(event.target.dataset.bin)
   );
-  if (idxToDel !== -1) items.splice(idxToDel, 1);
+  if (keyToDel !== -1) {
+    localStorage.removeItem(String(keyToDel))
+    items.splice(keyToDel, 1);
+  }
   render();
 };
 
