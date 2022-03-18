@@ -38,7 +38,7 @@ const colors = [
       }
 
     function deleteToDo(event) {
-        toDoNum--;
+        toDoNum = toDoNum =< 0 ? 0 : toDoNum--
         toDoInfo.innerText =`(${toDoNum})`;
         
         const deletetoDoList = event.target.parentElement;
