@@ -3,6 +3,7 @@ let doneList = [];
 
 // 입력된 값을 todo list에 추가
 const addTodoItem = () => {
+  event.preventDefault();
   const todoContent = document.querySelector(".todo-input").value;
   if (todoContent) paintTodoItem(todoContent);
 };
