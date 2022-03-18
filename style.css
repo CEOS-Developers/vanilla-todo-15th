@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Gowun Dodum';
+  src: url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+}
+
+* {
+  font-family: 'Gowun Dodum';
+}
+
+body {
+  margin: 0px;
+  background-image: linear-gradient(
+    to right top,
+    #75adff,
+    #89b9ff,
+    #9cc4ff,
+    #afd0ff,
+    #c2dbff
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  width: 27rem;
+  height: 50rem;
+  min-height: 50rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 2rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+h1 {
+  height: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+input {
+  width: 75%;
+  height: 60%;
+  margin: 1%;
+  padding: 5%;
+  border-radius: 2rem;
+  border: solid 0.1rem lightgrey;
+}
+
+#submitBtn {
+  height: 60%;
+  margin: 1%;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+section {
+  height: 30%;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+li {
+  font-size: 16px;
+}
+#deleteButton {
+  background-color: #75adff;
+  border: none;
+  color: white;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 6px;
+  margin: 3%;
+  border-radius: 0.3rem;
+}
