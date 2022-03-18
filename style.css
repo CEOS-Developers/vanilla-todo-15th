@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'SuncheonB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+
+    font-family: 'SuncheonB';
+    font-size: 15px;
+    display: flex;
+    width: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+  
+}
+
+.whiteBox{
+
+   
+    text-align: center;
+    width: 360px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    border-radius: 9px;
+
+    
+
+}
+
+.title-font{
+    font-size: 20px;
+}
+
+#toDo{
+    width: 300px;
+    height: 50px;
+    border-radius: 9px;
+    font-family: 'SuncheonB';
+}
+.inputBox{
+  
+    flex: 0.3;
+    border-bottom: 1px solid grey;
+  
+}
+
+.toDoList{
+   margin: 10px;
+}
+.toDoBox{
+    margin-top: 20px;
+    flex: 0.5;
+    border-bottom: 1px solid grey;
+}
+
+.doneBox{
+    margin: 20px;
+    flex: 0.5;
+   
+}
+
+#finishtoDo{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.hidden{
+     display : none;
+}
