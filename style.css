@@ -123,6 +123,10 @@ ul::-webkit-scrollbar-track {
 .item-content {
     cursor: pointer;
     line-height: 22px;
+    width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .todo {
     position: relative;
