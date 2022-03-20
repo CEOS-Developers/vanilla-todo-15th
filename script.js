@@ -21,8 +21,8 @@ const colors = [
     const doneInfo = document.getElementById("done-info");
     const finishtoDo = document.getElementById("finish-todo");
     
-    var toDoNum = 0;
-    var doneNum = 0;
+    let toDoNum = 0;
+    let doneNum = 0;
 
     function finish(){
         if(toDoNum === 0){
@@ -38,7 +38,7 @@ const colors = [
       }
 
     function deleteToDo(event) {
-        toDoNum--;
+       toDoNum <= 0 ? toDoNum = 0 : toDoNum-- ;
         toDoInfo.innerText =`(${toDoNum})`;
         
         const deletetoDoList = event.target.parentElement;
@@ -74,7 +74,7 @@ const colors = [
             const li = event.target.parentElement;
             li.remove(); 
             
-            doneNum--;
+           doneNum <= 0 ? doneNum = 0 : doneNum--;
             doneInfo.innerText =`(${doneNum})`;
         
           }
