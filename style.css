@@ -62,11 +62,15 @@ body{
     margin-top: 20px;
     flex: 0.5;
     border-bottom: 1px solid grey;
+
+    overflow: auto;
 }
 
 .done-box{
     margin: 20px;
     flex: 0.5;
+
+    overflow: auto;
    
 }
 
