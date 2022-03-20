@@ -13,13 +13,13 @@ const colors = [
     
     document.body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
    
-    const toDoButton = document.getElementById("toDoButton");
-    const toDo = document.getElementById("toDo");
+    const toDoButton = document.getElementById("todo-button");
+    const toDo = document.getElementById("todo");
     const toDoList = document.getElementById("todo-list");
-    const toDoInfo = document.getElementById("toDoInfo");
+    const toDoInfo = document.getElementById("todo-info");
     const doneList = document.getElementById("done-list");
-    const doneInfo = document.getElementById("doneInfo");
-    const finishtoDo = document.getElementById("finishtoDo");
+    const doneInfo = document.getElementById("done-info");
+    const finishtoDo = document.getElementById("finish-todo");
     
     var toDoNum = 0;
     var doneNum = 0;

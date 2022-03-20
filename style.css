@@ -39,39 +39,46 @@ body{
     font-size: 20px;
 }
 
-#toDo{
+#todo{
     width: 300px;
     height: 50px;
     border-radius: 9px;
     font-family: 'SuncheonB';
 }
-.inputBox{
+
+.input-box{
   
     flex: 0.3;
     border-bottom: 1px solid grey;
   
 }
 
-.toDoList{
+.todo-list{
    margin: 10px;
+   
 }
-.toDoBox{
+
+.todo-box{
     margin-top: 20px;
     flex: 0.5;
     border-bottom: 1px solid grey;
 }
 
-.doneBox{
+.done-box{
     margin: 20px;
     flex: 0.5;
    
 }
 
-#finishtoDo{
+#finish-todo{
     margin-top: 30px;
     font-size: 30px;
 }
 
 .hidden{
      display : none;
+}
+
+#todo-button{
+    cursor: pointer;
 }
