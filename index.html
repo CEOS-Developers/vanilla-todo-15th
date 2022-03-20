@@ -8,7 +8,27 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <main>
+      <header>
+        <h1>할 일 목록</h1>
+        <form id="form">
+          <input id="input" type="text" placeholder="여기 입력해 주세요" />
+          <button type="submit" id="submitBtn">+</button>
+        </form>
+      </header>
+
+      <section>
+        <h2 id="savedListTitle"></h2>
+        <ul id="savedList"></ul>
+      </section>
+      <section>
+        <h2 id="doneListTitle"></h2>
+        <ul id="doneList"></ul>
+      </section>
+    </main>
   </body>
   <script src="script.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+  </style>
 </html>
