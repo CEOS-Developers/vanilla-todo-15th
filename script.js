@@ -20,7 +20,8 @@ const colors = [
     const doneList = document.getElementById("done-list");
     const doneInfo = document.getElementById("done-info");
     const finishtoDo = document.getElementById("finish-todo");
-    
+    const submitform = document.getElementById("submit-form");
+
     let toDoNum = 0;
     let doneNum = 0;
 
@@ -79,8 +80,10 @@ const colors = [
         
           }
 
-     function toDoInput(){
-        const newTodo = toDo.value;
+     function toDoInput(event){
+        
+      event.preventDefault();
+      const newTodo = toDo.value;
         toDo.value = "";
         makeToDo(newTodo);
     
@@ -110,5 +113,6 @@ const colors = [
     
       }
 
+      submitform.addEventListener("submit", toDoInput);
       toDoButton.addEventListener("click", toDoInput);
  
