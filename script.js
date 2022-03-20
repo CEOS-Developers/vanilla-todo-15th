@@ -5,21 +5,11 @@ savedListTitle.innerHTML = '해야할 일';
 doneListTitle.innerHTML = '완료한 일';
 
 form.addEventListener('submit', (e) => {
-  //할 일 개수 세기
-  const countSavedNum = () => {
-    let savedNum = savedList.getElementsByTagName('li').length;
-    savedListTitle.innerHTML = `해야할 일(${savedNum})`;
-  };
-
-  const countDoneNum = () => {
-    let doneNum = doneList.getElementsByTagName('li').length;
-    doneListTitle.innerHTML = `완료한 일(${doneNum})`;
-  };
-
   //할 일 구현
   const li = document.createElement('li');
   li.innerText = document.getElementById('input').value;
   li.id = li.innerText;
+  document.getElementById('input').value = '';
   li.isDone = false;
   li.isDone ? doneList.append(li) : savedList.append(li);
   countSavedNum();
@@ -39,7 +29,7 @@ form.addEventListener('submit', (e) => {
 
   //할 일이 완료 되었는지 확인
   li.addEventListener('click', () => {
-    li.isDone ? (li.isDone = false) : (li.isDone = true);
+    li.isDone = !li.isDone;
     li.isDone ? doneList.append(li) : savedList.append(li);
     countSavedNum();
     countDoneNum();
@@ -47,8 +37,8 @@ form.addEventListener('submit', (e) => {
 
   //할 일에 드래그 속성 추가
   li.draggable = true;
-  li.addEventListener('dragstart', function (event) {});
-  li.addEventListener('drag', function (event) {});
+  li.addEventListener('dragstart', function () {});
+  li.addEventListener('drag', function () {});
   li.addEventListener('dragover', function (event) {
     event.preventDefault();
   });
@@ -60,3 +50,14 @@ form.addEventListener('submit', (e) => {
 
   e.preventDefault();
 });
+
+//할 일 개수 세기
+const countSavedNum = () => {
+  let savedNum = savedList.getElementsByTagName('li').length;
+  savedListTitle.innerHTML = `해야할 일(${savedNum})`;
+};
+
+const countDoneNum = () => {
+  let doneNum = doneList.getElementsByTagName('li').length;
+  doneListTitle.innerHTML = `완료한 일(${doneNum})`;
+};
