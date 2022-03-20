@@ -154,15 +154,15 @@ const countDoneItem = () => {
   count.innerText = `(${doneList.length})`;
 };
 
-// todo list를 localStorage에 저장
-const saveTodoLocalStorage = () => {
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+const saveLocalStorage = (type, list) => {
+  localStorage.setItem(type, JSON.stringify(list));
 };
 
+// todo list를 localStorage에 저장
+const saveTodoLocalStorage = () => saveLocalStorage("todoList", todoList);
+
 // todo done list를 localStorage에 저장
-const saveDoneLocalStorage = () => {
-  localStorage.setItem("doneList", JSON.stringify(doneList));
-};
+const saveDoneLocalStorage = () => saveLocalStorage("doneList", doneList);
 
 // localStorage에서 todo list 불러오기
 const loadLocalStorage = () => {
