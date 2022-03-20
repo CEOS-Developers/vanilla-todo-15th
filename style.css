@@ -28,6 +28,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+.todo-list-item {
+  margin-bottom: 13px;
+}
+.todo-item-text,
+.done-item-text {
+  cursor: pointer;
+  font-size: 15px;
+  padding-left: 5px;
+}
+.done-item-text {
+  text-decoration-line: line-through;
+  color: lightGrey;
+}
 .todo-input {
   border: 1px solid lightgrey;
   border-radius: 10px;
@@ -43,6 +56,11 @@ body {
   border: none;
   font-size: 30px;
   margin-left: 10px;
+  cursor: pointer;
+}
+.todo-delete-button {
+  width: 14px;
+  padding-left: 5px;
   cursor: pointer;
 }
 .top-contents,

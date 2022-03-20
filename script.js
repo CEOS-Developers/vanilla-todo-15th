@@ -17,21 +17,17 @@ const paintTodoItem = (text) => {
 
   // todo item 텍스트 추가
   newTodoText.innerText = text;
-  newTodoText.style.cursor = "pointer";
-  newTodoText.style.fontSize = "15px";
-  newTodoText.style.paddingLeft = "5px";
+  newTodoText.className = "todo-item-text";
   newTodoText.addEventListener("dblclick", toggleTodoToDone);
 
   // todo item 삭제 버튼 추가
   todoDel.setAttribute("src", "img/bin.png");
-  todoDel.style.width = "14px";
-  todoDel.style.paddingLeft = "5px";
-  todoDel.style.cursor = "pointer";
+  todoDel.className = "todo-delete-button";
   todoDel.addEventListener("click", deleteTodoItem);
 
   // li에 item 추가
   newTodo.setAttribute("id", todoId);
-  newTodo.style.marginBottom = "13px";
+  newTodo.className = "todo-list-item";
   newTodo.appendChild(newTodoText);
   newTodo.appendChild(todoDel);
 
@@ -40,7 +36,8 @@ const paintTodoItem = (text) => {
     id: todoId,
     text,
   };
-  todoList.push(todoObj);
+
+  todoList = [...todoList, todoObj];
   document.querySelector(".todo-list").appendChild(newTodo);
   document.querySelector(".todo-input").value = "";
 
@@ -93,23 +90,17 @@ const paintDoneItem = (text) => {
 
   // todo done item 텍스트 추가
   newTodoText.innerText = text;
-  newTodoText.style.cursor = "pointer";
-  newTodoText.style.fontSize = "15px";
-  newTodoText.style.textDecorationLine = "line-through";
-  newTodoText.style.color = "lightGrey";
-  newTodoText.style.paddingLeft = "5px";
+  newTodoText.className = "done-item-text";
   newTodoText.addEventListener("dblclick", toggleDoneToTodo);
 
   // todo done item 삭제 버튼 추가
   todoDel.setAttribute("src", "img/bin.png");
-  todoDel.style.width = "14px";
-  todoDel.style.paddingLeft = "5px";
-  todoDel.style.cursor = "pointer";
+  todoDel.className = "todo-delete-button";
   todoDel.addEventListener("click", deleteDoneItem);
 
   // li에 item 추가
   newTodoDone.setAttribute("id", todoId);
-  newTodoDone.style.marginBottom = "13px";
+  newTodoDone.className = "todo-list-item";
   newTodoDone.appendChild(newTodoText);
   newTodoDone.appendChild(todoDel);
 
@@ -118,7 +109,7 @@ const paintDoneItem = (text) => {
     text,
   };
 
-  doneList.push(todoObj);
+  doneList = [...doneList, todoObj];
   document.querySelector(".done-list").appendChild(newTodoDone);
 
   // done item 개수 갱신
