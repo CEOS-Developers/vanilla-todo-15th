@@ -31,7 +31,10 @@ form.addEventListener('submit', (e) => {
   li.append(deleteButton);
 
   deleteButton.addEventListener('click', function (event) {
-    setTimeout(() => li.remove(), 0);
+    li.remove();
+    event.stopPropagation();
+    countSavedNum();
+    countDoneNum();
   });
 
   //할 일이 완료 되었는지 확인
