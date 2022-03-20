@@ -1,6 +1,8 @@
 let todoList = [];
 let doneList = [];
 
+const form = document.querySelector(".todo-form");
+
 // 입력된 값을 todo list에 추가
 const addTodoItem = () => {
   event.preventDefault();
@@ -69,7 +71,7 @@ const deleteTodoItem = (e) => {
 // todo item 개수 출력
 const countTodoItem = () => {
   const count = document.querySelector(".todo-count");
-  count.innerText = "(" + todoList.length + ")";
+  count.innerText = `(${todoList.length})`;
 };
 
 // todo item -> done item
@@ -149,7 +151,7 @@ const deleteDoneItem = (e) => {
 // todo item 개수 출력
 const countDoneItem = () => {
   const count = document.querySelector(".done-count");
-  count.innerText = "(" + doneList.length + ")";
+  count.innerText = `(${doneList.length})`;
 };
 
 // todo list를 localStorage에 저장
@@ -186,4 +188,9 @@ const loadLocalStorage = () => {
   countDoneItem();
 };
 
-loadLocalStorage();
+const init = () => {
+  form.addEventListener("submit", addTodoItem);
+  loadLocalStorage();
+};
+
+init();
