@@ -1,6 +1,6 @@
 const savedList = document.getElementById('savedList');
 const doneList = document.getElementById('doneList');
-let savedListTitle = document.getElementById('savedListTitle');
+const savedListTitle = document.getElementById('savedListTitle');
 savedListTitle.innerHTML = '해야할 일';
 doneListTitle.innerHTML = '완료한 일';
 
@@ -54,11 +54,11 @@ form.addEventListener('submit', (e) => {
 
 //할 일 개수 세기
 const countSavedNum = () => {
-  let savedNum = savedList.getElementsByClassName('toDo').length;
+  const savedNum = savedList.getElementsByClassName('toDo').length;
   savedListTitle.innerHTML = `해야할 일(${savedNum})`;
 };
 
 const countDoneNum = () => {
-  let doneNum = doneList.getElementsByClassName('toDo').length;
+  const doneNum = doneList.getElementsByClassName('toDo').length;
   doneListTitle.innerHTML = `완료한 일(${doneNum})`;
 };
