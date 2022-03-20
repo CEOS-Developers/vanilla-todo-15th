@@ -5,10 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Todo</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="top-contents">
+        <h2 class="todo-title">&#9989&nbsp투두리스트</h2>
+        <div class="todo-input-items">
+          <form class="todo-form">
+            <input class="todo-input" placeholder="할 일을 입력하세요" />
+            <input
+              class="todo-input-button"
+              type="submit"
+              value="+"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="center-contents">
+        <p class="list-title">TO DO&nbsp<span class="todo-count"></span></p>
+        <ul class="todo-list"></ul>
+      </div>
+      <div class="bottom-contents">
+        <p class="list-title">DONE&nbsp<span class="done-count"></span></p>
+        <ul class="done-list"></ul>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
