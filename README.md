@@ -27,7 +27,7 @@ https://vanilla-todo-15th-usernamebuzz.vercel.app/
 
 - 드래그&드롭
   잘 구현해보고 싶었는데 시간이 없어서 우선 윗 항목과 자리가 바뀌게 구현했습니다. 마지막에 innerHTML을 사용해서 항목 갯수를 나타내게 구현하고나니 이걸 활용해서 구현해볼 수 있을 것 같아요! 혹시 리액트로 구현하면 좀 더 쉬울지 궁금하네요..🤔
-
+  
 ## 아쉬웠던 부분
 
 확실히 시간이 없으니 localStorage도 사용을 못해보았네요 :( 그리고 다음에는 CSS도 좀 더 신경써보고 싶습니다. 사실 %를 처음 사용해봐서 다른 방법과 어떻게 다른지 조금 더 알아보고 싶습니다. 또 최소 높이/너비도 사용해보고 싶습니다!
@@ -45,20 +45,27 @@ https://vanilla-todo-15th-usernamebuzz.vercel.app/
 ## Key Questions
 
 - DOM은 무엇인가요?
+
   Document Object Model의 약자로, 웹 브라우저가 HTML 페이지를 인식하는 방식입니다.
+  
   출처: https://m.blog.naver.com/magnking/220972680805
 
 - HTML (tag) Element를 JavaScript로 생성하는 방법은 어떤 것이 있고, 어떤 방법이 가장 적합할까요?
+  
   document.createElement('li');로 생성할 수 있습니다
 
 - Semantic tag에는 어떤 것이 있으며, 이를 사용하는 이유는 무엇일까요?
-<header>, <article>, <footer>, <p>등이 있으며 의미가 명확한 코드 작성, 검색엔진최적화(SEO)와 시각장애인분들을 위한 reader 등에 사용할 수 있습니다.
+
+`<header>, <article>, <footer>, <p>`등이 있으며 의미가 명확한 코드 작성, 검색엔진최적화(SEO)와 시각장애인분들을 위한 reader 등에 사용할 수 있습니다.
 
 - Flexbox Layout은 무엇이며, 어떻게 사용하나요?
+
   요소들을 배치할 수 있는 모델이라고 생각합니다. 행과 열 축을 사용하고, 컨테이너 속성과 아이템 속성으로 나눌 수 있다고 생각합니다.
 
 - JavaScript가 다른 언어들에 비해 주목할 만한 점에는 어떤 것들이 있나요?
+ 
   프론트엔드와 백엔드 둘 다 구현할 수 있습니다.
 
 - 코드에서 주석을 다는 바람직한 방법은 무엇일까요?
+
   읽는 사람의 입장을 고려하여 가독성을 높이는데 도움이 되도록 다는 것이라고 생각합니다.
