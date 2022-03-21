@@ -89,3 +89,27 @@ flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변�
 코드를 읽다가 주석으로 처리된 코드가 줄줄이 나오면 신경이 아주 거슬린다. 얼마나 오래된 코드인지, 중요한 코드인지 아닌지, 알 길이 없다. 그럼에도 아무도 삭제하지 않는다. 누군가에게 필요하거나 다른 사람이 사용할 코드라 생각하기 때문이다.
 
 그래서 코드는 그 자리에 남아 매일매일 낡아간다. 더 이상 존재하지 않는 함수를 호출한다. 이름이 바뀐 변수를 사용한다. 더 이상 사용하지 않는 표기법을 따른다. 자신이 포함된 모듈을 오염시킨다. 읽는 사람을 헷갈리게 만든다. 주석으로 처리된 코드는 흉물 그 자체다.
+
+<br>
+
+# Reference
+
+### 웹브라우저 작동원리와 Todo List
+
+https://medium.com/@asiloveyou/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-todo-%EB%A7%8C%EB%93%A4%EA%B8%B0-466ec50c889
+
+### querySelector vs. getElementById: A Comparison
+
+https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/
+
+### WATCHA 개발 지식 — px | em | rem
+
+https://medium.com/watcha/watcha-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%8B%9D-px-em-rem-f569c6e76e66
+
+### 14. 배열에 항목 제거하기
+
+https://react.vlpt.us/basic/14-array-remove.html
+
+### 자바스크립트에서 불변성(Immutability)이란
+
+https://sustainable-dev.tistory.com/156
