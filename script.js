@@ -69,6 +69,8 @@ const deleteToDo = (event) => {
 };
 
 const toggleToDo = (event) => {
+    event.preventDefault();
+    
   const { target } = event;
   const li = target.parentNode;
   const done = li.parentNode.className == "todo-list-done";
