@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding-top: 70px;
+  background: rgb(182, 223, 224);
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 17px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+li {
+  padding: 5px;
+  padding-left: 20px;
+  list-style: none;
+  font-weight: light;
+  color: rgb(75, 73, 73);
+  font-size: 13px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 400px;
+  height: 650px;
+  background: rgba(189, 187, 187, 0.8);
+  border-radius: 30px;
+  padding: 25px;
+}
+
+.clock {
+  margin: 0;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 27px;
+}
+
+.title {
+  padding-top: 10px;
+  margin: 0;
+  font-weight: normal;
+}
+
+form {
+  text-align: center;
+}
+.to-do-input {
+  padding-left: 20px;
+  border: none;
+  width: 320px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: rgb(241, 241, 229);
+}
+
+.list {
+  padding: 20px;
+  font-weight: light;
+}
+
+.to-do-list,
+.done-list {
+  padding: 0;
+  padding-top: 20px;
+  margin: 0;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: auto;
+  background-color: rgb(241, 241, 229);
+}
+
+.done {
+  margin-top: 10px;
+}
+
+.check-btn,
+.delete-btn {
+  float: right;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: rgb(34, 31, 216);
+}
+
+/*스크롤바 커스텀*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+::-webkit-scrollbar-thumb {
+  height: 17%;
+  background-color: rgb(182, 223, 224);
+  border-radius: 10px;
+  background-clip: padding-box;
+}
