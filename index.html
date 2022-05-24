@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+    <meta name="description" content="Vanilla JavaScript로 to-do list 만들기" />
+    <meta name="keywords" content="Vanilla JavaScript로 to-do list 만들기" />
+    <meta name="author" content="Sungwoo Shin" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable-no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <!-- IE Engine -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" tyle="image/x-icon" href="img/favicon.ico" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- CDN -->
+    <script
+      src="https://kit.fontawesome.com/2f8046b2d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Web Font -->
+    <link
+    href=”https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap”
+    rel=”stylesheet”>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <div class="container"></div>
+    <div class="screen">
+      <header>To Do List</header>
+      <section class="input-container">
+        <form>
+          <input id="todo-input" placeholder=" 할 일 입력" autofocus />
+          <button id="add-todo-btn">➕</button>
+        </form>
+      </section>
+      <section class="todo-list-container">
+        <h4 id="todo-list-title"></h4>
+        <ul class="todo-list"></ul>
+      </section>
+      <section class="done-list-container">
+        <h4 id="done-list-title"></h4>
+        <ul class="done-list"></ul>
+      </section>
+    </div>
   </body>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </html>

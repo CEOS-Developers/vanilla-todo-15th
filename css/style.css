@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', 'sans-serif', 'serif';
+  color: #3f464d;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  width: 360px;
+  height: 600px;
+  background: #fff;
+
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  margin: 5% 0 0 5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+form {
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: solid 1px lightgrey;
+}
+
+#todo-input {
+  width: 350px;
+  height: 40px;
+  margin-left: 5%;
+
+  border-radius: 10px;
+  border: solid 1px lightgrey;
+}
+
+:focus {
+  outline: none;
+}
+
+#add-todo-btn,
+#add-todo-btn:hover {
+  width: 40px;
+  height: 40px;
+  background: none;
+  margin-right: 12px;
+
+  font-size: 1.2rem;
+  text-align: center;
+
+  border: none;
+  cursor: pointer;
+}
+
+.todo-list-container {
+  height: 40%;
+  border-bottom: solid 1px lightgray;
+}
+
+.done-list-container {
+  height: 40%;
+}
+
+h4 {
+  margin: 5% 0% -3% 5%;
+}
+
+.todo-list {
+  height: 190px;
+  width: 355px;
+  overflow: auto;
+}
+
+.done-list {
+  height: 140px;
+  width: 355px;
+  overflow: auto;
+}
+
+li,
+li:hover {
+  margin: 1rem 1rem 1rem -1rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Truncate long sentences (...) */
+span {
+  width: 270px;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.delete-btn {
+  width: 13px;
+  height: 13px;
+  margin-left: 13px;
+  opacity: 30%;
+
+  background-image: url('../img/trash-solid.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.done-list li {
+  text-decoration: line-through;
+}
+
+.todo-list::-webkit-scrollbar,
+.done-list::-webkit-scrollbar {
+  width: 20px;
+}
+
+.todo-list::-webkit-scrollbar-thumb,
+.done-list::-webkit-scrollbar-thumb {
+  background: #dddcdc;
+  background-clip: padding-box;
+  border-radius: 20px;
+  border: 8px solid transparent;
+}
