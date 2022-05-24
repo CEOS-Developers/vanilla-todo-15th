@@ -4,6 +4,13 @@
 
 https://vanilla-todo-15th-beta.vercel.app/
 
+### Objectives
+
+- VSCode, Prettier를 이용하여 개발 환경을 관리합니다.
+- HTML/CSS의 기초를 이해합니다.
+- JavaScript를 이용한 DOM 조작을 이해합니다.
+- Vanilla.js를 이용한 어플리케이션 상태 관리 방법을 이해합니다.
+
 ### TODO
 
 - [x] 입력 버튼과 엔터 키로 투두 추가
@@ -11,6 +18,9 @@ https://vanilla-todo-15th-beta.vercel.app/
 - [x] 투두 텍스트 클릭 시 목록간 이동
 - [x] 진행 중인 투두와 완료한 투두 목록 분리
 - [x] 진행 중인 투두와 완료한 투두의 개수 카운팅
+- [ ] 외부 폰트([눈누 상업용 무료폰트](https://noonnu.cc/))로 입맛에 맞게 꾸밉니다.
+- [ ] 브라우저의 `localStorage` 혹은 `sessionStorage`를 이용하여 다음 번 접속 시에 기존의 투두 데이터를 불러옵니다.
+- [ ] 이 외에도 추가하고 싶은 기능이 있다면 마음껏 추가하셔도 됩니다.
 
 ### Reference
 
@@ -19,15 +29,10 @@ https://vanilla-todo-15th-beta.vercel.app/
 - [FlexBox 가이드](https://heropy.blog/2018/11/24/css-flexible-box/)
 - [JS를 통한 DOM 조작](https://velog.io/@bining/javascript-DOM-조작하기#append)
 - [localStorage, sessionStorage](https://www.daleseo.com/js-web-storage/)
-
 * [웹브라우저 작동원리와 Todo List](https://medium.com/@asiloveyou/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-todo-%EB%A7%8C%EB%93%A4%EA%B8%B0-466ec50c889)
-
 * [querySelector vs. getElementById: A Comparison](https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/)
-
 * [WATCHA 개발 지식 — px | em | rem](https://medium.com/watcha/watcha-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%8B%9D-px-em-rem-f569c6e76e66)
-
 * [배열에 항목 제거하기](https://react.vlpt.us/basic/14-array-remove.html)
-
 * [자바스크립트에서 불변성(Immutability)이란](https://sustainable-dev.tistory.com/156)
 
 <br>
