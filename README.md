@@ -1,22 +1,18 @@
 # 1. Mission
 
-### [1주차 미션 공지]
+### Deployment
 
-깃허브 주소: https://github.com/CEOS-Developers/vanilla-todo-15th
+https://vanilla-todo-15th-beta.vercel.app/
 
-결과 화면: https://vanillajs-corinth.vercel.app/
+### TODO
 
-마감 기한: **2022년 3월 18일 금요일 23시 59분**
+- [x] 입력 버튼과 엔터 키로 투두 추가
+- [x] 휴지통 아이콘 클릭 시 투두 삭제
+- [x] 투두 텍스트 클릭 시 목록간 이동
+- [x] 진행 중인 투두와 완료한 투두 목록 분리
+- [x] 진행 중인 투두와 완료한 투두의 개수 카운팅
 
-### [필수 구현 기능]
-
-- 입력 버튼과 엔터 키로 투두 추가
-- 휴지통 아이콘 클릭 시 투두 삭제
-- 투두 텍스트 클릭 시 목록간 이동
-- 진행 중인 투두와 완료한 투두 목록 분리
-- 진행 중인 투두와 완료한 투두의 개수 카운팅
-
-### [1주차 참고 자료]
+### Reference
 
 - [HTML/CSS 기초](https://heropy.blog/2019/04/24/html-css-starter/)
 - [HTML 태그](https://heropy.blog/2019/05/26/html-elements/)
@@ -24,11 +20,19 @@
 - [JS를 통한 DOM 조작](https://velog.io/@bining/javascript-DOM-조작하기#append)
 - [localStorage, sessionStorage](https://www.daleseo.com/js-web-storage/)
 
+* [웹브라우저 작동원리와 Todo List](https://medium.com/@asiloveyou/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-todo-%EB%A7%8C%EB%93%A4%EA%B8%B0-466ec50c889)
+
+* [querySelector vs. getElementById: A Comparison](https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/)
+
+* [WATCHA 개발 지식 — px | em | rem](https://medium.com/watcha/watcha-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%8B%9D-px-em-rem-f569c6e76e66)
+
+* [배열에 항목 제거하기](https://react.vlpt.us/basic/14-array-remove.html)
+
+* [자바스크립트에서 불변성(Immutability)이란](https://sustainable-dev.tistory.com/156)
+
 <br>
 
-# 2. Key Question (PR)
-
->  일주일 동안 인프런 강의를 통해 HTML, CSS, JS 문법에 대해 숙지한 후 과제를 진행했습니다. 직접 코드를 작성해보며 flex box 등 레이아웃 배치에 대해 감을 잡게 되었습니다. 다음 프로젝트를 할 때는 container 구조 등 레이아웃 전반에 대한 계획을 먼저 세우고 코드를 작성하면 구조적으로 좋은 코드를 작성할 수 있을것 같다고 생각했습니다. javascript의 경우 주현님의 코드들 많이 참고했습니다. DOM을 통한 여러 element 제어 메서드 사용이 익숙치 않아 해당 부분을 연습해야 겠다고 생각했습니다. 기초 공부를 하다보면 아무래도 HTML, CSS, JS 각각에 대해 개별적으로 학습을 하게 되는데 이들이 어떻게 하나의 프로젝트에 적용되는지 연습할 수 있는 좋은 과제였던것 같습니다. 배포링크는 다음과 같습니다. https://vanilla-todo-15th-24siefil.vercel.app/
+# 2. Key Questions
 
 ### DOM은 무엇인가요?
 
@@ -48,8 +52,6 @@
 
   * 단점: 가독성이 좋지 않다. HTML element 생성할 때마다 dom tree 자료구조를 탐색해야 하기 때문에 성능저하로 이어진다.
 
-> https://dkje.github.io/2020/08/18/createDomElement/
-
 ### Semantic tag에는 어떤 것이 있으며, 이를 사용하는 이유는 무엇일까요?
 
 시멘틱 테그에는 header, nav, aside, section, article, footer 가 있다. 시멘틱 웹이란 형식에 맞추어 html 코드를 작성함으로서, 검색엔진 등에서 작성한 웹페이지를 더욱 잘 이해할 수 있게 하는 기술로 생각할 수 있다. 이는 각 부분을 지정하는데에만 사용되며, 실제 위치와 웹상의 표현 등은 전적으로 css를 통해 작성해야 한다.
@@ -57,8 +59,6 @@
 ### Flexbox Layout은 무엇이며, 어떻게 사용하나요?
 
 flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를 배치, 정렬, 분산할 수 있는 방법을 제공하는 CSS3의 새로운 레이아웃 방식이다. flexbox는 복수의 자식 요소인 flex item과 그 상위 부모 요소인 flex container로 구성된다. flexbox에서 사용하는 속성은 부모 요소인 flex container에 정의하는 속성과 자식 요소인 flex item에 정의하는 속성으로 나누어진다. 전체적인 정렬이나 흐름에 관련된 속성은 flex container에 정의하고, 자식 요소의 크기나 순서에 관련된 속성은 flex item에 정의한다.
-
-> https://d2.naver.com/helloworld/8540176
 
 ### JavaScript가 다른 언어들에 비해 주목할 만한 점에는 어떤 것들이 있나요?
 
@@ -70,7 +70,7 @@ flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변�
 
 다음 내용은 클린코드(로버트 마틴 저)의 주석 관련 내용을 발췌한 것입니다.
 
-주석이 필요한 코드는 코드 그 자체로 의도를 분명히 들러내지 못했다는 말이다.
+* 주석이 필요한 코드는 코드 그 자체로 의도를 분명히 드러내지 못했다는 말이다.
 
 * 부적절한 정보
 
@@ -89,27 +89,3 @@ flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변�
 코드를 읽다가 주석으로 처리된 코드가 줄줄이 나오면 신경이 아주 거슬린다. 얼마나 오래된 코드인지, 중요한 코드인지 아닌지, 알 길이 없다. 그럼에도 아무도 삭제하지 않는다. 누군가에게 필요하거나 다른 사람이 사용할 코드라 생각하기 때문이다.
 
 그래서 코드는 그 자리에 남아 매일매일 낡아간다. 더 이상 존재하지 않는 함수를 호출한다. 이름이 바뀐 변수를 사용한다. 더 이상 사용하지 않는 표기법을 따른다. 자신이 포함된 모듈을 오염시킨다. 읽는 사람을 헷갈리게 만든다. 주석으로 처리된 코드는 흉물 그 자체다.
-
-<br>
-
-# Reference
-
-### 웹브라우저 작동원리와 Todo List
-
-https://medium.com/@asiloveyou/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-todo-%EB%A7%8C%EB%93%A4%EA%B8%B0-466ec50c889
-
-### querySelector vs. getElementById: A Comparison
-
-https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/
-
-### WATCHA 개발 지식 — px | em | rem
-
-https://medium.com/watcha/watcha-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%8B%9D-px-em-rem-f569c6e76e66
-
-### 14. 배열에 항목 제거하기
-
-https://react.vlpt.us/basic/14-array-remove.html
-
-### 자바스크립트에서 불변성(Immutability)이란
-
-https://sustainable-dev.tistory.com/156
