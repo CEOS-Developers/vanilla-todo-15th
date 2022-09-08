@@ -1,118 +1,104 @@
-const colors = [
-    "#0fbcf9",
-    "#00d8d6",
-    "#05c46b",
-    "#ffc048",
-    "#ffdd59"
-  
-    ];
+document.body.style.background = `linear-gradient(to right, #c7efff, #ffccf6)`;
 
-  
-    let firstColor = colors[Math.floor(Math.random() * colors.length)];
-    let secondColor = colors[Math.floor(Math.random() * colors.length)];
-    
-    document.body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
-   
-    const toDoButton = document.getElementById("todo-button");
-    const toDo = document.getElementById("todo");
-    const toDoList = document.getElementById("todo-list");
-    const toDoInfo = document.getElementById("todo-info");
-    const doneList = document.getElementById("done-list");
-    const doneInfo = document.getElementById("done-info");
-    const finishtoDo = document.getElementById("finish-todo");
-    const submitform = document.getElementById("submit-form");
+const toDoButton = document.getElementById('todo-button');
+const toDo = document.getElementById('todo');
+const toDoList = document.getElementById('todo-list');
+const toDoInfo = document.getElementById('todo-info');
+const doneList = document.getElementById('done-list');
+const doneInfo = document.getElementById('done-info');
+const submitform = document.getElementById('submit-form');
 
-    let toDoNum = 0;
-    let doneNum = 0;
+let toDoNum = 0;
+let doneNum = 0;
 
-    function finish(){
-        if(toDoNum === 0){
-          finishtoDo.classList.remove("hidden");
-    
-        }
-    
-        else{
-          finishtoDo.classList.add("hidden");
-        }
-    
-       
-      }
+//todo에서 삭제
+function deleteToDo(event) {
+  toDoNum <= 0 ? (toDoNum = 0) : toDoNum--;
+  toDoInfo.innerText = `(${toDoNum})`;
 
-    function deleteToDo(event) {
-       toDoNum <= 0 ? toDoNum = 0 : toDoNum-- ;
-        toDoInfo.innerText =`(${toDoNum})`;
-        
-        const deletetoDoList = event.target.parentElement;
-        deletetoDoList.remove();
-      
-        finish();
+  const deletetoDoList = event.target.parentElement;
+  deletetoDoList.remove();
+}
 
-        }
+function moveToDo(event) {
+  deleteToDo(event);
 
-        function moveToDo(event) {
-            deleteToDo(event);
-            
-            const removeList = document.createElement("div");
-            const removeItem = event.target;
-            const deleteButton = document.createElement("span");
-            deleteButton.innerText = "❌";
-           
-            removeList.style.color ="grey";
-            
-            removeList.appendChild(removeItem); 
-            removeList.appendChild(deleteButton);
-            doneList.appendChild(removeList);
-        
-        
-            doneNum++;
-            doneInfo.innerText =`(${doneNum})`;
-        
-            deleteButton.addEventListener("click", trashDoneToDo);
-        
-          }
+  const removeList = document.createElement('div');
+  const removeItem = event.target;
+  const deleteButton = document.createElement('span');
 
-          function trashDoneToDo(event) {
-            const li = event.target.parentElement;
-            li.remove(); 
-            
-           doneNum <= 0 ? doneNum = 0 : doneNum--;
-            doneInfo.innerText =`(${doneNum})`;
-        
-          }
+  deleteButton.innerText = '❌';
 
-     function toDoInput(event){
-        
-      event.preventDefault();
-      const newTodo = toDo.value;
-        toDo.value = "";
-        makeToDo(newTodo);
-    
-      }
-    
-      function makeToDo(newTodo) {
-        toDoNum++;
-        toDoInfo.innerText = `(${toDoNum})`;
-        
-        const li = document.createElement("div");
-        const toDoItem = document.createElement("span");
-        const deleteButton = document.createElement("span");
-        
-        li.style.margin= "10px"; 
-        
-        toDoItem.innerText = newTodo;
-        deleteButton.innerText = "❌";
-        
-        li.appendChild(toDoItem); 
-        li.appendChild(deleteButton);
-        toDoList.appendChild(li);
-        
-        toDoItem.addEventListener("click", moveToDo);
-        deleteButton.addEventListener("click", deleteToDo);
+  removeList.appendChild(removeItem);
+  removeList.appendChild(deleteButton);
+  doneList.appendChild(removeList);
 
-        finish();
-    
-      }
+  doneNum++;
 
-      submitform.addEventListener("submit", toDoInput);
-      toDoButton.addEventListener("click", toDoInput);
- 
+  removeItem.removeEventListener('click', moveToDo);
+  removeItem.addEventListener('click', moveDoneToDo);
+  deleteButton.addEventListener('click', trashDoneToDo);
+
+  toDoInfo.innerText = `(${toDoNum})`;
+  doneInfo.innerText = `(${doneNum})`;
+}
+
+function moveDoneToDo(event) {
+  trashDoneToDo(event);
+
+  const removeList = document.createElement('div');
+  const removeItem = event.target;
+  const deleteButton = document.createElement('span');
+
+  deleteButton.innerText = '❌';
+
+  removeList.appendChild(removeItem);
+  removeList.appendChild(deleteButton);
+  toDoList.appendChild(removeList);
+
+  toDoNum++;
+
+  removeItem.removeEventListener('click', moveDoneToDo);
+  removeItem.addEventListener('click', moveToDo);
+  deleteButton.addEventListener('click', deleteToDo);
+
+  toDoInfo.innerText = `(${toDoNum})`;
+  doneInfo.innerText = `(${doneNum})`;
+}
+
+function trashDoneToDo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+
+  doneNum <= 0 ? (doneNum = 0) : doneNum--;
+  doneInfo.innerText = `(${doneNum})`;
+}
+
+function toDoInput(event) {
+  event.preventDefault();
+  const newTodo = toDo.value;
+  toDo.value = '';
+  makeToDo(newTodo);
+}
+
+function makeToDo(newTodo) {
+  toDoNum++;
+  toDoInfo.innerText = `(${toDoNum})`;
+
+  const li = document.createElement('div');
+  const toDoItem = document.createElement('span');
+  const deleteButton = document.createElement('span');
+
+  toDoItem.innerText = newTodo;
+  deleteButton.innerText = '❌';
+
+  li.appendChild(toDoItem);
+  li.appendChild(deleteButton);
+  toDoList.appendChild(li);
+
+  toDoItem.addEventListener('click', moveToDo);
+  deleteButton.addEventListener('click', deleteToDo);
+}
+
+submitform.addEventListener('submit', toDoInput);
+toDoButton.addEventListener('click', toDoInput);

@@ -1,88 +1,93 @@
 @font-face {
-    font-family: 'SuncheonB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'SuncheonB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body{
-
-    font-family: 'SuncheonB';
-    font-size: 15px;
-    display: flex;
-    width: 100vh;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-
-  
+body {
+  font-family: 'SuncheonB';
+  font-size: 15px;
+  display: flex;
+  width: 100vh;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.whiteBox{
-
-   
-    text-align: center;
-    width: 360px;
-    height: 600px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid grey;
-    border-radius: 9px;
-
-    
-
+.whiteBox {
+  text-align: left;
+  width: 360px;
+  height: 600px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  border-radius: 9px;
+  padding: 10px;
 }
 
-.title-font{
-    font-size: 20px;
+.title-font {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-#todo{
-    width: 300px;
-    height: 50px;
-    border-radius: 9px;
-    font-family: 'SuncheonB';
+#todo {
+  width: 300px;
+  height: 50px;
+  border-radius: 9px;
+  font-family: 'SuncheonB';
 }
 
-.input-box{
-  
-    flex: 0.3;
-    border-bottom: 1px solid grey;
-  
+#submit-form {
+  height: 76px;
+  margin-top: 10px;
+}
+.input-box {
+  height: 100px;
+  border-bottom: 1px solid grey;
+  text-align: center;
 }
 
-.todo-list{
-   margin: 10px;
-   
+#todo-list {
+  cursor: pointer;
+  color: black;
 }
 
-.todo-box{
-    margin-top: 20px;
-    flex: 0.5;
-    border-bottom: 1px solid grey;
+#done-list {
+  color: grey;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+.todo-box {
+  padding: 20px;
+  flex: 0.5;
+  border-bottom: 1px solid grey;
 
-    overflow: auto;
+  overflow: auto;
+}
+.todo-list-title-font {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.done-box {
+  margin: 20px;
+  flex: 0.5;
+
+  overflow: auto;
 }
 
-.done-box{
-    margin: 20px;
-    flex: 0.5;
-
-    overflow: auto;
-   
+#finish-todo {
+  margin-top: 30px;
+  font-size: 30px;
 }
 
-#finish-todo{
-    margin-top: 30px;
-    font-size: 30px;
+.hidden {
+  display: none;
 }
 
-.hidden{
-     display : none;
-}
-
-#todo-button{
-    cursor: pointer;
+#todo-button {
+  cursor: pointer;
 }
