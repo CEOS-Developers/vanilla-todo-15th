@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel ="stylesheet" href ="style.css"/>
+    <script src="https://kit.fontawesome.com/f9b359f751.js" crossorigin="anonymous"></script>
 
-  <body>
-    <div class="container"></div>
-  </body>
-  <script src="script.js"></script>
+
+
+</head>
+<body>
+    <div class ="whiteBox">
+        <div class ="todo-list-title-font">❗투두리스트❗</div>
+        <div class = "input-box">
+                <form id = "submit-form">
+                    <input id ="todo" placeholder="할 일을 입력하세요"></input>
+                    <i id ="todo-button" class="fa-solid fa-plus"></i>
+                </form>
+       </div>
+       <div class = "todo-box">
+        <div class ="title-font">✍️To Do<span id = "todo-info" >(0)</span></div>
+           <div id = "todo-list">
+           </div>
+       </div>
+       <div class = "done-box">
+           <div class ="title-font">👻Done<span id = "done-info" >(0)</span></div>
+           <div id = done-list>
+         </div>
+       </div>
+   </div>
+
+ 
+</body>
+
+<script src ="script.js"></script>   
+
 </html>
